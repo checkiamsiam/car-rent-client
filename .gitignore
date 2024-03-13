@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
-yarn.lock
+
 # testing
 /coverage
 
@@ -30,6 +30,8 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+./yarn.lock
 
 # typescript
 *.tsbuildinfo
