@@ -1,15 +1,12 @@
 import PublicLayout from "@/components/layout/PublicLayout";
-import Footer from "@/components/sections/Layout/Footer";
-import Header from "@/components/sections/Layout/Header";
-import { Button } from "antd";
+import HomeBanner from "@/components/sections/Home/Banner/HomeBanner";
 
 export default function Home() {
   return (
     <main>
-      <Header />
-      <h1 className="mt-16">Home</h1>
-      <Button type="primary">Button</Button>
-      <Footer />
+      <PublicLayout>
+        <HomeBanner />
+      </PublicLayout>
     </main>
   );
 }
