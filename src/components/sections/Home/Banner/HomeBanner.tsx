@@ -1,5 +1,11 @@
 "use client";
-import { DatePicker, Input, TimePicker, type CheckboxProps, Button } from "antd";
+import {
+  DatePicker,
+  Input,
+  TimePicker,
+  type CheckboxProps,
+  Button,
+} from "antd";
 import { CiSearch } from "react-icons/ci";
 
 const HomeBanner = () => {
@@ -23,14 +29,18 @@ const HomeBanner = () => {
                     <CiSearch />
                   </div>
                   <div>
-                    <label className="text-[12px] ms-4 md:ms-0">Pick Up Location</label>
+                    <label className="text-[12px] ms-4 md:ms-0">
+                      Pick Up Location
+                    </label>
                     <Input defaultValue="Paris, Ile de France, France" />
                   </div>
                 </div>
                 <div className="md:flex flex-none items-center justify-center">
                   <div className="flex gap-2 md:mt-0 mt-3">
                     <div className="bg-white md:pe-0 pe-4 rounded-md block gap-3 justify-center items-center">
-                      <label className="text-[12px] ms-4 md:ms-2">Pick Up Date</label>
+                      <label className="text-[12px] ms-4 md:ms-2">
+                        Pick Up Date
+                      </label>
                       <div>
                         <DatePicker />
                       </div>
@@ -38,7 +48,9 @@ const HomeBanner = () => {
                   </div>
                   <div className="flex gap-2 md:mt-0 mt-3">
                     <div className="bg-white md:pe-0 pe-4 rounded-md block gap-3 justify-center items-center md:ms-[10px] ms-0">
-                      <label className="text-[12px] ms-4 md:ms-2">Pick Up Date</label>
+                      <label className="text-[12px] ms-4 md:ms-2">
+                        Pick Up Date
+                      </label>
                       <div>
                         <DatePicker />
                       </div>
