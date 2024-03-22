@@ -23,8 +23,8 @@ export const adminMenuItems: MenuItem[] = [
     icon: <IoBagCheckOutline />,
     children: [
       {
-        label: <Link href={`/admin/quotation-requests`}>Manage Locations</Link>,
-        key: `/admin/quotation-requests`,
+        label: <Link href={`/admin/manage-location`}>Manage Locations</Link>,
+        key: `/admin/manage-location`,
       },
       {
         label: <Link href={`/admin/quotation-given`}>Manage Cars</Link>,

@@ -6,7 +6,7 @@ import { envConfig } from "./helpers/config/envConfig";
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const session: any = await getToken({ req: request, secret: envConfig.jwt.secret });
-  console.log(session);
+  
   if (!session) {
     return NextResponse.redirect(new URL("/admin-login", request.nextUrl));
   }

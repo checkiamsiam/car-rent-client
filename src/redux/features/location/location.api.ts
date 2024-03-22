@@ -1,3 +1,4 @@
+import { axiosInstance } from "@/helpers/axios/axiosInstance";
 import { baseApi } from "@/redux/baseApi";
 import { tagTypes } from "@/redux/tag-types";
 import { IMeta, IQuery } from "@/types";
@@ -35,7 +36,7 @@ export const locationApi = baseApi.injectEndpoints({
       providesTags: [tagTypes.location],
     }),
     addLocation: builder.mutation({
-      query: (arg: { data: { location: string } }) => ({
+      query: (arg: { data: { name : string } }) => ({
         url: location_url + "/create",
         method: "POST",
         data: arg.data,
@@ -59,6 +60,19 @@ export const locationApi = baseApi.injectEndpoints({
     }),
   }),
 });
+
+export const getLocations = async ({ params }: { params?: IQuery }): Promise<{ locations: ILocation[]; meta: IMeta }> => {
+  const result = await axiosInstance({
+    url: location_url,
+    method: "GET",
+    params,
+  });
+  return {
+    locations: result.data,
+    //@ts-ignore
+    meta: result.meta,
+  };
+};
 
 export const { useAddLocationMutation, useDeleteLocationMutation, useGetLocationsQuery, useGetSingleLocationQuery, useUpdateLocationMutation } =
   locationApi;
