@@ -16,9 +16,15 @@ const HomeBanner = () => {
   return (
     <div>
       <div className="bg-[url('/imgs/banner-bg.jpg')] relative after:bg-primary after:absolute after:h-full after:w-full after:opacity-60 after:top-0 after:left-0 after:z-30 min-h-[80vh] py-20 bg-center bg-no-repeat bg-cover w-full h-full">
+<<<<<<< HEAD
         <div className="container px-5 mx-auto flex justify-center items-center">
           <div className="z-40 md:mt-[208px] mt-[45px] ">
             <h2 className="text-center md:leading-relaxed font-sans mx-3 md:mx-0 text-white font-semibold text-[22px] md:text-[23px] mb-8 md:mb-14">
+=======
+        <div className="container md:pt-20 pt-10 px-5 mx-auto flex justify-center items-center">
+          <div className="z-40">
+            <h2 className="text-center md:leading-relaxed font-sans mx-3 md:mx-0 text-black font-semibold text-[22px] md:text-[23px] mb-8 md:mb-14">
+>>>>>>> ee638dcbae75d9ddb081f0f79edb575f8b082135
               Affordable Car Rentals: Drive Your Way to Convenience and Savings
               <br />
               Today!&rdquo; Car Rental -Search, Compare & Save

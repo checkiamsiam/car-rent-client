@@ -2,13 +2,24 @@
 import { Link } from "@/lib/router-events";
 import { Button } from "antd";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { FaPersonBreastfeeding } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 import HeaderDropdown from "./HeaderDropdown";
 
 const Header: React.FC = () => {
+  const [isTop, setIsTop] = useState(true);
+  const controlNavbar = () => {
+    if (window.scrollY > 100) {
+      setIsTop(false);
+    } else {
+      setIsTop(true);
+    }
+  };
+  console.log(isTop);
+  useEffect(() => window.addEventListener("scroll", controlNavbar), []);
   return (
-    <div className="w-full bg-white backdrop-blur-3xl sticky top-0 z-50">
+    <div className={`w-full fixed top-0 z-50   ${isTop ? "bg-primary bg-opacity-10" : "bg-white shadow-md"}`}>
       <div className=" h-full container px-5 mx-auto py-2 md:py-5 flex items-center justify-between">
         <div className="flex gap-10 items-center justify-center ">
           <Link href="/" className="flex justify-center items-center">
@@ -52,7 +63,7 @@ const Header: React.FC = () => {
             <h2 className="">EN</h2>
           </div>
           <div className="items-center hidden md:flex justify-center font-semibold">
-            <Button size="large" type="primary">
+            <Button size="large" type={!isTop ? "primary" : undefined}>
               Manage Booking
             </Button>
           </div>
