@@ -1,3 +1,4 @@
+import { axiosInstance } from "@/helpers/axios/axiosInstance";
 import { baseApi } from "@/redux/baseApi";
 import { tagTypes } from "@/redux/tag-types";
 import { IMeta, IQuery } from "@/types";
@@ -62,5 +63,18 @@ export const carApi = baseApi.injectEndpoints({
     }),
   }),
 });
+
+export const getCars = async ({ params }: { params?: IQuery }): Promise<{ cars: ICar[]; meta: IMeta }> => {
+  const result = await axiosInstance({
+    url: car_url,
+    method: "GET",
+    params,
+  });
+  return {
+    cars: result.data,
+    //@ts-ignore
+    meta: result.meta,
+  };
+};
 
 export const { useAddCarMutation, useDeleteCarMutation, useGetCarsQuery, useGetSingleCarQuery, useUpdateCarMutation } = carApi;
