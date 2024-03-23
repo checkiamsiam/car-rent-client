@@ -47,7 +47,6 @@ const ManageCarPage = () => {
     }
   );
 
-  console.log(data?.cars[0]);
   const cars = data?.cars;
   const meta = data?.meta;
 

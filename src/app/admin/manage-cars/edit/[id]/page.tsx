@@ -52,7 +52,6 @@ const LocationEditPage = () => {
     );
 
     if (Object.keys(changedProperties).length > 0) {
-      console.log(changedProperties);
       const obj = { ...changedProperties };
       const file = obj["image"];
       delete obj["image"];

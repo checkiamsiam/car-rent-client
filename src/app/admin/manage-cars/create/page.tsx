@@ -13,7 +13,6 @@ const CreateCarPage = () => {
   const router = useRouter();
   const [addCar] = useAddCarMutation();
   const submitHandler = async (data: any) => {
-    console.log(data);
     const obj = { ...data };
     const file = obj["image"];
     delete obj["image"];
@@ -26,7 +25,7 @@ const CreateCarPage = () => {
     formData.append("image", file as Blob);
     formData.append("payload", payload);
 
-    console.log(formData);
+    
 
     try {
       message.loading("Adding...");
