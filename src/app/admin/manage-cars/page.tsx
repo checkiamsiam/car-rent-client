@@ -159,7 +159,7 @@ const ManageCarPage = () => {
           </div>
         </div>
         <div>
-          <Link href="/admin/manage-car/create">
+          <Link href="/admin/manage-cars/create">
             <Button type="primary">Add Car</Button>
           </Link>
 

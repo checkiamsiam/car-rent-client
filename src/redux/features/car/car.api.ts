@@ -46,7 +46,7 @@ export const carApi = baseApi.injectEndpoints({
       invalidatesTags: [tagTypes.car],
     }),
     updateCar: builder.mutation({
-      query: (arg: { id: string; data: Partial<ICar> }) => ({
+      query: (arg: { id: string; data: FormData }) => ({
         url: car_url + "/update" + "/" + arg.id,
         method: "PATCH",
         data: arg.data,

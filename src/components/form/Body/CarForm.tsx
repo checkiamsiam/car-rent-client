@@ -1,8 +1,11 @@
 "use client";
 import FormInput from "@/components/form/FormInput";
 import FormUploadFile from "@/components/form/FormUploadFile";
-import { Col, Row } from "antd";
+import { Checkbox, Col, Row } from "antd";
+import FormSelectField from "../FormSelectField";
 import FormTextArea from "../FormTextArea";
+import LocationSelect from "../FormLocationSelect";
+import FormCheckboxField from "../FormCheckbox";
 
 const CarForm = () => {
   return (
@@ -52,6 +55,15 @@ const CarForm = () => {
               marginBottom: "10px",
             }}
           >
+            <LocationSelect name="location" label="Location" size="large" />
+          </Col>
+          <Col
+            className="gutter-row"
+            span={8}
+            style={{
+              marginBottom: "10px",
+            }}
+          >
             <FormInput type="number" name="rentPerDay" size="large" label="Rent Per Day" />
           </Col>
           <Col
@@ -80,6 +92,35 @@ const CarForm = () => {
             }}
           >
             <FormInput type="number" name="dors" size="large" label="Dors" />
+          </Col>
+          <Col
+            className="gutter-row"
+            span={8}
+            style={{
+              marginBottom: "10px",
+            }}
+          >
+            <FormSelectField
+              name="fuel"
+              label="Fuel"
+              size="large"
+              options={[
+                { label: "Petrol", value: "petrol" },
+                { label: "Diesel", value: "diesel" },
+                { label: "CNG", value: "cng" },
+                { label: "Electric", value: "electric" },
+              ]}
+            />
+          </Col>
+          <Col
+            className="gutter-row"
+            span={24}
+            style={{
+              marginBottom: "10px",
+            }}
+          >
+            <FormCheckboxField name="ac" label="AC" />
+            <FormCheckboxField name="automatic" label="Automatic" />
           </Col>
         </Row>
       </div>
