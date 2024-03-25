@@ -8,7 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import searchValidation from "@/schema/search.schema";
 
 const SearchBox = () => {
-  const handleSearch = (data:any) => {
+  const handleSearch = (data: any) => {
     console.log(data);
   };
 
@@ -18,7 +18,7 @@ const SearchBox = () => {
   return (
     <div>
       <Form submitHandler={handleSearch} resolver={zodResolver(searchValidation)}>
-        <div className="flex gap-2 p-3 rounded-md bg-[#ffb700]">
+        <div className="flex flex-wrap gap-2 p-3 rounded-md bg-[#ffb700]">
           <SearchAutoComplete name="location" label="Pick-up Location" />
           <SearchDatePicker name="pickDate" label="Pick-up Date" />
           <SearchTimePicker name="pickTime" label="Time" />

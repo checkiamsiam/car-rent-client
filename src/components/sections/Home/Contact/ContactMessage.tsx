@@ -5,7 +5,7 @@ import FormTextArea from "@/components/form/FormTextArea";
 import { Button } from "antd";
 
 const ContactMessage = () => {
-  const sendContactInfo = (data : any) => {
+  const sendContactInfo = (data: any) => {
     // store user data in database
     // event.preventDefault();
     // const form = event.target;
@@ -54,7 +54,7 @@ const ContactMessage = () => {
               name="name"
               size="large"
               style={{
-                backgroundColor: "#D1D5DB",
+                backgroundColor: "#E0E3EA",
               }}
             />
           </div>
@@ -65,7 +65,7 @@ const ContactMessage = () => {
               name="number"
               size="large"
               style={{
-                backgroundColor: "#D1D5DB",
+                backgroundColor: "#E0E3EA",
               }}
             />
           </div>
@@ -77,7 +77,7 @@ const ContactMessage = () => {
               type="email"
               size="large"
               style={{
-                backgroundColor: "#D1D5DB",
+                backgroundColor: "#E0E3EA",
               }}
             />
           </div>
@@ -88,7 +88,7 @@ const ContactMessage = () => {
               name="purpose"
               size="large"
               style={{
-                backgroundColor: "#D1D5DB",
+                backgroundColor: "#E0E3EA",
               }}
             />
           </div>
@@ -98,8 +98,9 @@ const ContactMessage = () => {
               placeholder="Enter Your Message"
               name="message"
               style={{
-                backgroundColor: "#D1D5DB",
+                backgroundColor: "#E0E3EA",
               }}
+              rows={5}
             />
           </div>
           <div>
