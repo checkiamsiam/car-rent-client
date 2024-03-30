@@ -4,8 +4,9 @@ import { Button } from "antd";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaPersonBreastfeeding } from "react-icons/fa6";
-import { IoIosArrowDown } from "react-icons/io";
+
 import HeaderDropdown from "./HeaderDropdown";
+import Help from "../Help/Help";
 
 const Header: React.FC = () => {
   const [isTop, setIsTop] = useState(true);
@@ -39,16 +40,12 @@ const Header: React.FC = () => {
             </h1>
           </Link>
 
-          <Link
-            href="/"
-            className="hidden group lg:flex items-center justify-center font-semibold"
-          >
+          <div className="hidden group lg:flex items-center justify-center font-semibold">
             <div>
               <FaPersonBreastfeeding className="text-2xl border border-gray-400 mr-2 p-[3px] rounded-full" />
             </div>
-            <p className="mr-1 group-hover:underline">Help</p>
-            <IoIosArrowDown />
-          </Link>
+            <Help />
+          </div>
         </div>
         <div className="hidden lg:flex justify-center items-center gap-4">
           {/* <Link href="/reservation" className="hover:underline font-semibold">
