@@ -19,15 +19,30 @@ const Header: React.FC = () => {
 
   useEffect(() => window.addEventListener("scroll", controlNavbar), []);
   return (
-    <div className={`w-full fixed top-0 z-50   ${isTop ? "bg-primary bg-opacity-10" : "bg-white shadow-md"}`}>
+    <div
+      className={`w-full fixed top-0 z-50   ${
+        isTop ? "bg-primary bg-opacity-10" : "bg-white shadow-md"
+      }`}
+    >
       <div className=" h-full container px-5 mx-auto py-2 lg:py-5 flex items-center justify-between">
         <div className="flex gap-10 items-center justify-center ">
           <Link href="/" className="flex justify-center items-center">
-            <Image src="/imgs/rental-car.png" alt="" width={45} height={45} className="text-white" />
-            <h1 className="text-xl font-sans lg:text-2xl ms-2 font-semibold">SHR Car Rental</h1>
+            <Image
+              src="/imgs/rental-car.png"
+              alt=""
+              width={45}
+              height={45}
+              className="text-white"
+            />
+            <h1 className="text-xl font-sans lg:text-2xl ms-2 font-semibold">
+              SHR Car Rental
+            </h1>
           </Link>
 
-          <Link href="/" className="hidden group lg:flex items-center justify-center font-semibold">
+          <Link
+            href="/"
+            className="hidden group lg:flex items-center justify-center font-semibold"
+          >
             <div>
               <FaPersonBreastfeeding className="text-2xl border border-gray-400 mr-2 p-[3px] rounded-full" />
             </div>
@@ -36,8 +51,14 @@ const Header: React.FC = () => {
           </Link>
         </div>
         <div className="hidden lg:flex justify-center items-center gap-4">
-          <Link href="/reservation" className="hover:underline font-semibold">
+          {/* <Link href="/reservation" className="hover:underline font-semibold">
             Reservation
+          </Link> */}
+          <Link href="/" className="hover:underline font-semibold">
+            Home
+          </Link>
+          <Link href="/terms" className="hover:underline font-semibold">
+            Terms
           </Link>
           <Link href="/about" className="hover:underline font-semibold">
             About Us
