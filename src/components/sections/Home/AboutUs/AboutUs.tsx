@@ -18,7 +18,9 @@ const AboutUs = () => {
             confidence of SHR Car Rental.
           </p>
           <div className="mt-4 mb-3">
-            <Button type="primary">Learn More</Button>
+            <button className="bg-[#3a88cb] hover:bg-blue-900 text-white rounded-md px-3 py-1.5">
+              Learn More
+            </button>
           </div>
         </div>
       </div>

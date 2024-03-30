@@ -10,7 +10,7 @@ const Contact = () => {
     <div className="w-full">
       <h4 className="text-3xl font-semibold text-center py-3 text-gray-800">
         Con
-        <span className="border-b-4 border-gray-200 py-4">tac</span>t Us
+        <span className="border-b-4 border-gray-300 py-4">tac</span>t Us
       </h4>
       <div className="max-w-screen-xl mx-auto px-8 md:px-10 gap-10 lg:gap-20">
         <div
@@ -76,9 +76,9 @@ const Contact = () => {
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12080.73732861526!2d-74.0059418!3d40.7127847!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM40zMDA2JzEwLjAiTiA3NMKwMjUnMzcuNyJX!5e0!3m2!1sen!2sus!4v1648482801994!5m2!1sen!2sus"
           frameBorder="0"
           //   style="border:0;"
-          allowfullscreen=""
+          // allowfullscreen=""
           aria-hidden="false"
-          tabIndex="0"
+          tabIndex={0}
         ></iframe>
       </div>
       {/* google map end  */}
