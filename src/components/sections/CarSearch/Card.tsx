@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "@/lib/router-events";
 import { ICar } from "@/types/ApiResponse";
 import { Button } from "antd";
 import dayjs from "dayjs";
@@ -13,8 +14,10 @@ import { PiCassetteTapeThin } from "react-icons/pi";
 import { TbAirConditioning, TbManualGearbox } from "react-icons/tb";
 
 const Card = ({ car }: { car: ICar }) => {
+  const router = useRouter();
   const params = useSearchParams();
-  console.log(params);
+  const searchQuery = Object.fromEntries(params.entries());
+  const  {location , ...restToPass} = searchQuery;
   const pickDate = dayjs(params.get("pickDate"));
   const returnDate = dayjs(params.get("returnDate"));
   const diff = returnDate.diff(pickDate, "day");
@@ -90,6 +93,7 @@ const Card = ({ car }: { car: ICar }) => {
                   style={{
                     backgroundColor: "#068423",
                   }}
+                  onClick={() => router.push(`/checkout/${car?._id}?${new URLSearchParams(restToPass)}`)}
                 >
                   View deal
                 </Button>

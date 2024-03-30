@@ -24,14 +24,22 @@ const SearchBox = () => {
   const threeDaysFromNow = new Date();
   threeDaysFromNow.setDate(threeDaysFromNow.getDate() + 3);
 
+  const disabledDateBeforeToday = (current: dayjs.Dayjs | null) => {
+    return current && current < dayjs().startOf("day");
+  };
+
+  const disabledDateForReturn = (current: dayjs.Dayjs | null) => {
+    return current && current < dayjs().startOf("day").add(3, "day");
+  };
+
   return (
     <div>
       <Form submitHandler={handleSearch} resolver={zodResolver(searchValidation)}>
         <div className="flex flex-wrap gap-2 p-3 rounded-md bg-[#ffb700]">
           <SearchAutoComplete name="location" label="Pick-up Location" />
-          <SearchDatePicker name="pickDate" label="Pick-up Date" />
+          <SearchDatePicker name="pickDate" label="Pick-up Date" disableDate={disabledDateBeforeToday} />
           <SearchTimePicker name="pickTime" label="Time" />
-          <SearchDatePicker name="returnDate" label="Return Date" defaultValue={threeDaysFromNow} />
+          <SearchDatePicker name="returnDate" label="Return Date" defaultValue={threeDaysFromNow} disableDate={disabledDateForReturn} />
           <SearchTimePicker name="returnTime" label="Time" />
           <div>
             <Button

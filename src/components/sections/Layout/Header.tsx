@@ -36,13 +36,13 @@ const Header: React.FC = () => {
           </Link>
         </div>
         <div className="hidden lg:flex justify-center items-center gap-4">
-          <Link href="/" className="hover:underline font-semibold">
+          <Link href="/reservation" className="hover:underline font-semibold">
             Reservation
           </Link>
-          <Link href="/" className="hover:underline font-semibold">
+          <Link href="/about" className="hover:underline font-semibold">
             About Us
           </Link>
-          <Link href="/" className="hover:underline font-semibold">
+          <Link href="/contact" className="hover:underline font-semibold">
             Contacts
           </Link>
         </div>
