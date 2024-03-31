@@ -73,6 +73,18 @@ export const getLocations = async ({ params }: { params?: IQuery }): Promise<{ l
     meta: result.meta,
   };
 };
+export const getSingleLocations = async ({id,params}:{ id: string; params?: IQuery }): Promise<{ location: ILocation;  }> => {
+  const result = await axiosInstance({
+    url: location_url + "/" + id,
+    method: "GET",
+    params,
+  });
+  console.log(result);
+  return {
+    location: result?.data,
+  };
+};
+
 
 export const { useAddLocationMutation, useDeleteLocationMutation, useGetLocationsQuery, useGetSingleLocationQuery, useUpdateLocationMutation } =
   locationApi;

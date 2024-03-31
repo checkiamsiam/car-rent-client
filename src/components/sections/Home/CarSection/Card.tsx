@@ -1,4 +1,3 @@
-import { Button } from "antd";
 import Image from "next/image";
 import { BsFillFuelPumpDieselFill } from "react-icons/bs";
 import { GiBigGear, GiCarDoor, GiComputerFan } from "react-icons/gi";
@@ -18,18 +17,7 @@ export type CardTProps = {
 };
 
 const Card = ({ card }: any) => {
-  const {
-    title,
-    subTitle,
-    mad,
-    seats,
-    bags,
-    door,
-    ac,
-    cylinder,
-    system,
-    image,
-  } = card;
+  const { title, subTitle, mad, seats, bags, door, ac, cylinder, system, image } = card;
   return (
     <div className="bg-white px-5 border border-gray-200 rounded-md py-6 uppercase text-[#473C6B] hover:shadow-lg">
       <div className="flex justify-between gap-2">
@@ -85,18 +73,12 @@ const Card = ({ card }: any) => {
       </div>
 
       <div className="text-center">
-        <Image
-          width={120}
-          height={100}
-          className="inline w-full h-40"
-          src={image}
-          alt=""
-        />
+        <Image width={120} height={100} className="inline w-full h-40" src={image} alt="" />
       </div>
       <div>
-        <button className="uppercase mt-5 text-white w-full bg-[#F47322] hover:bg-blue-900 py-2 rounded-md">
-          book now
-        </button>
+        <a href="#search-bar-banner">
+          <button className="uppercase mt-5 text-white w-full bg-[#F47322] hover:bg-blue-900 py-2 rounded-md">book now</button>
+        </a>
       </div>
     </div>
   );
