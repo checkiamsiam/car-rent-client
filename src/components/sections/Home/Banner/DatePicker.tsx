@@ -2,11 +2,23 @@ import { DatePicker, DatePickerProps } from "antd";
 import dayjs from "dayjs";
 import { Controller, useFormContext } from "react-hook-form";
 
-const SearchDatePicker = ({ name, label, defaultValue , disableDate }: { name: string; label: string; defaultValue?: any ; disableDate: any }) => {
+const SearchDatePicker = ({
+  name,
+  label,
+  defaultValue,
+  disableDate,
+}: {
+  name: string;
+  label: string;
+  defaultValue?: any;
+  disableDate: any;
+}) => {
   const { control, setValue } = useFormContext();
 
   // Ensure the defaultValue is formatted correctly
-  const formattedDefaultValue = defaultValue ? dayjs(defaultValue).format("YYYY-MM-DD") : dayjs().format("YYYY-MM-DD");
+  const formattedDefaultValue = defaultValue
+    ? dayjs(defaultValue).format("YYYY-MM-DD")
+    : dayjs().format("YYYY-MM-DD");
 
   // Set the formatted default value
   setValue(name, formattedDefaultValue);
@@ -18,7 +30,7 @@ const SearchDatePicker = ({ name, label, defaultValue , disableDate }: { name: s
 
   return (
     <div>
-      <div className="bg-white max-w-36 rounded-md block gap-3 justify-center items-center">
+      <div className="bg-white md:max-w-36 w-[155px] rounded-md block gap-3 justify-center items-center">
         <label className="text-[12px] ms-4 md:ms-2">{label}</label>
         <div>
           <Controller
@@ -27,7 +39,11 @@ const SearchDatePicker = ({ name, label, defaultValue , disableDate }: { name: s
             render={({ field }) => (
               <DatePicker
                 // Use field.value and ensure it is formatted correctly
-                value={field.value ? dayjs(field.value, "YYYY-MM-DD") : dayjs(formattedDefaultValue, "YYYY-MM-DD")}
+                value={
+                  field.value
+                    ? dayjs(field.value, "YYYY-MM-DD")
+                    : dayjs(formattedDefaultValue, "YYYY-MM-DD")
+                }
                 size="large"
                 disabledDate={disableDate}
                 onChange={handleOnChange}

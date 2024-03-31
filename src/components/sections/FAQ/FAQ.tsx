@@ -1,8 +1,9 @@
 "use client";
-import { faqData } from "@/components/sections/Home/CarSection/DummyData";
 import React, { useState } from "react";
+import { faqData } from "../Home/CarSection/DummyData";
+import Link from "next/link";
 
-const ReservationPage = () => {
+const FAQ = () => {
   const [showAnswer, setShowAnswer] = useState<boolean[]>(
     new Array(faqData.length).fill(false)
   );
@@ -16,15 +17,15 @@ const ReservationPage = () => {
   };
 
   return (
-    <div className="md:mt-28 mt-10 container mx-auto px-5">
-      <section className="py-10 bg-gray-50 sm:py-16 lg:py-24">
+    <div className=" container mx-auto px-5">
+      <section className="py-7 bg-gray-50 sm:py-5 lg:py-12">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-semibold leading-tight text-gray-800 sm:text-3xl lg:text-4xl">
               Frequently Asked Questions
             </h2>
             <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+              Answers to Your Common Queries in SHR Car Rental
             </p>
           </div>
 
@@ -70,12 +71,12 @@ const ReservationPage = () => {
 
           <p className="text-center text-gray-600 text-base mt-9">
             Didn’t find the answer you are looking for?{" "}
-            <a
-              href="#"
+            <Link
+              href="/contact"
               className="font-medium text-blue-600 transition-all duration-200 hover:text-blue-700 focus:text-blue-700 hover:underline"
             >
               Contact our support
-            </a>
+            </Link>
           </p>
         </div>
       </section>
@@ -83,4 +84,4 @@ const ReservationPage = () => {
   );
 };
 
-export default ReservationPage;
+export default FAQ;

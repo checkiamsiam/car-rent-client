@@ -8,9 +8,12 @@ const HomeBanner = () => {
         <div className="container px-5 mx-auto flex justify-center items-center min-h-[80vh] z-40">
           <div className="max-w-5xl z-40">
             <h2 className="text-center md:leading-relaxed font-sans mx-3 md:mx-0 text-white md:text-3xl text-2xl font-semibold mb-5 md:mb-10">
-              Affordable Car Rentals: Drive Your Way to Convenience and Savings
+              Explore Marrakech hassle-free with our airport car rental
+              services.
               <br />
-              Today!&rdquo; Car Rental -Search, Compare & Save
+              Get great deals & book your vehicle effortlessly.
+              <br />
+              Start your journey now!
             </h2>
             <div className="md:px-0 px-4">
               <SearchBox />

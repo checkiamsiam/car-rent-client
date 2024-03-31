@@ -34,26 +34,36 @@ const SearchBox = () => {
 
   return (
     <div>
-      <Form submitHandler={handleSearch} resolver={zodResolver(searchValidation)}>
+      <Form
+        submitHandler={handleSearch}
+        resolver={zodResolver(searchValidation)}
+      >
         <div className="flex flex-wrap gap-2 p-3 rounded-md bg-[#ffb700]">
           <SearchAutoComplete name="location" label="Pick-up Location" />
-          <SearchDatePicker name="pickDate" label="Pick-up Date" disableDate={disabledDateBeforeToday} />
+          <SearchDatePicker
+            name="pickDate"
+            label="Pick-up Date"
+            disableDate={disabledDateBeforeToday}
+          />
           <SearchTimePicker name="pickTime" label="Time" />
-          <SearchDatePicker name="returnDate" label="Return Date" defaultValue={threeDaysFromNow} disableDate={disabledDateForReturn} />
+          <SearchDatePicker
+            name="returnDate"
+            label="Return Date"
+            defaultValue={threeDaysFromNow}
+            disableDate={disabledDateForReturn}
+          />
           <SearchTimePicker name="returnTime" label="Time" />
           <div>
-            <Button
-              htmlType="submit"
-              className="max-w-28"
+            <button
+              type="submit"
+              className="md:w-[110px] w-[279px] md:py-0 py-3 h-full rounded-md"
               style={{
                 backgroundColor: "#068323",
                 color: "white",
-                height: "100%",
-                width: "7rem",
               }}
             >
               Search
-            </Button>
+            </button>
           </div>
         </div>
         <div className="text-xl  font-semibold mt-3 md:flex flex-none gap-5 items-center justify-center">

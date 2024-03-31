@@ -1,4 +1,5 @@
 import PublicLayout from "@/components/layout/PublicLayout";
+import FAQ from "@/components/sections/FAQ/FAQ";
 import AboutUs from "@/components/sections/Home/AboutUs/AboutUs";
 import HomeBanner from "@/components/sections/Home/Banner/HomeBanner";
 import Car from "@/components/sections/Home/CarSection/Car";
@@ -13,6 +14,7 @@ export default function Home() {
         <Choose />
         <Car />
         <AboutUs />
+        <FAQ />
         <Contact />
       </PublicLayout>
     </main>
