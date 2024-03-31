@@ -79,7 +79,6 @@ export const getSingleLocations = async ({id,params}:{ id: string; params?: IQue
     method: "GET",
     params,
   });
-  console.log(result);
   return {
     location: result?.data,
   };

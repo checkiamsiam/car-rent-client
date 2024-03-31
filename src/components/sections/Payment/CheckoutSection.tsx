@@ -1,6 +1,7 @@
-import { BsSpeedometer2 } from "react-icons/bs";
+import { getSingleCar } from "@/redux/features/car/car.api";
+import { BsFillFuelPumpFill, BsSpeedometer2 } from "react-icons/bs";
 import { FaRegCircleCheck, FaRegUser } from "react-icons/fa6";
-import { GiGearStickPattern, GiSchoolBag } from "react-icons/gi";
+import { GiGearStickPattern } from "react-icons/gi";
 import { PiBagSimpleDuotone } from "react-icons/pi";
 import { RxTimer } from "react-icons/rx";
 import BillingAddress from "./BillingAddress";
@@ -9,8 +10,19 @@ import PaymentPart from "./PaymentPart";
 import ProtectionPart from "./ProtectionPart";
 import Rightside from "./Rightside";
 import TermsCondition from "./TermsCondition";
+import dayjs from "dayjs";
 
-const CheckoutSection = () => {
+const CheckoutSection = async ({ carId, queryParams }: { carId: string; queryParams: any }) => {
+  const carData = await getSingleCar({
+    id: carId,
+    params: {
+      populate: "location",
+    },
+  });
+  const car = carData?.car;
+  const pickDate = dayjs(queryParams?.pickDate);
+  const returnDate = dayjs(queryParams?.returnDate);
+  const diff = returnDate.diff(pickDate, "day");
   return (
     <div className="">
       <div className="mt-8">
@@ -37,40 +49,36 @@ const CheckoutSection = () => {
           <div className=" my-5 rounded-md p-2 border-[1.5px]">
             <div className="lg:flex gap-10">
               <figure>
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9qvKvmXKXB2ibBRashkWx4HVNF_JN7_CQM6YgmwFjM1dr_hYRaQVi7pP3Z_-NQIYc_RU&usqp=CAU"
-                  alt=""
-                />
+                <img className="w-[300px] m-auto" src={car?.imageUrl} alt="" />
               </figure>
               <div>
                 <h2 className="text-2xl font-bold">
-                  Renult Clio <small className="text-base font-normal">or similar small car</small>
+                  {car?.title} <sup className="text-xs">or similar {car?.category} car</sup>
                 </h2>
                 <div>
                   <div className="flex items-center gap-16 pt-4 lg:text-base text-sm">
                     <div>
                       <h2 className="flex items-center gap-2 py-2">
-                        <FaRegUser /> 4 Seats
+                        <FaRegUser /> {car?.seats} Seats
                       </h2>
                       <h2 className="flex items-center gap-2 ">
-                        <PiBagSimpleDuotone /> 1 Large bag <RxTimer />
+                        <PiBagSimpleDuotone /> {car?.bags} bag <RxTimer />
                       </h2>
                     </div>
                     <div>
                       <h2 className="flex items-center gap-2 py-2">
-                        <GiGearStickPattern /> Manual
+                        <GiGearStickPattern /> {car?.automatic ? "Automatic" : "Manual"}
                       </h2>
-                      <h2 className="flex items-center gap-2">
-                        <GiSchoolBag />1 small bag <RxTimer />
+                      <h2 className="flex items-center gap-2 ">
+                        <BsFillFuelPumpFill size={20} />
+                        {car?.fuel}
                       </h2>
                     </div>
                   </div>
                   <div>
-                    <h2 className="flex items-center gap-2 text-green-300 pt-3 pb-7">
+                    <h2 className="flex items-center gap-2 text-green-300 pt-3">
                       <BsSpeedometer2 /> Unlimited mileage
                     </h2>
-                    <h2 className="text-lg">Paris - Neuilly Sur Seine</h2>
-                    <p className="text-[14px]">Downtown</p>
                   </div>
                 </div>
               </div>
@@ -96,7 +104,7 @@ const CheckoutSection = () => {
           <TermsCondition />
         </div>
         <div className="lg:w-[30%]  h-full sticky lg:top-20 top-10 lg:mt-8">
-          <Rightside></Rightside>
+          <Rightside price={car?.rentPerDay} dayDiff={diff} />
         </div>
       </div>
     </div>

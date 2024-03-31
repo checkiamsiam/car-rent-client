@@ -1,15 +1,23 @@
-import { getSingleLocations } from "@/redux/features/location/location.api";
+import { getSingleCar } from "@/redux/features/car/car.api";
+import { ILocation } from "@/types/ApiResponse";
+import dayjs from "dayjs";
 import { FaAngleRight } from "react-icons/fa6";
 
-const HeadingSection = async ({ locationId, queryParams }: { locationId: string; queryParams: any }) => {
-  const locationData = await getSingleLocations({ id: locationId });
-  console.log(locationId);
+const HeadingSection = async ({ carId, queryParams }: { carId: string; queryParams: any }) => {
+  const carData = await getSingleCar({
+    id: carId,
+    params: {
+      populate: "location",
+    },
+  });
   return (
     <div className="">
       <div className="flex items-center gap-10 border-[1.5px] p-2 rounded-md">
         <div>
-          <h2 className="lg:text-lg font-bold py-1">Paris - Neuilly Sur Seine</h2>
-          <p className="text-slate-500">Wed, 27 Mar 2024, 10:00</p>
+          <h2 className="lg:text-lg font-bold py-1">{(carData?.car?.location as ILocation)?.name}</h2>
+          <p className="text-slate-500">
+            {dayjs(queryParams?.pickDate).format("ddd, DD MMM YYYY")}, {queryParams?.pickTime}
+          </p>
         </div>
         <div>
           <p>
@@ -17,8 +25,8 @@ const HeadingSection = async ({ locationId, queryParams }: { locationId: string;
           </p>
         </div>
         <div>
-          <h2 className="lg:text-lg font-bold py-1">Paris - Neuilly Sur Seine</h2>
-          <p className="text-slate-500">Sat, 30 Mar 2024, 10:00</p>
+          <h2 className="lg:text-lg font-bold py-1">{(carData?.car?.location as ILocation)?.name}</h2>
+          <p className="text-slate-500">{dayjs(queryParams?.returnDate).format("ddd, DD MMM YYYY")}, {queryParams?.returnTime}</p>
         </div>
       </div>
     </div>
