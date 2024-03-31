@@ -17,7 +17,7 @@ const Card = ({ car }: { car: ICar }) => {
   const router = useRouter();
   const params = useSearchParams();
   const searchQuery = Object.fromEntries(params.entries());
-  const  {location , ...restToPass} = searchQuery;
+  const { location, ...restToPass } = searchQuery;
   const pickDate = dayjs(params.get("pickDate"));
   const returnDate = dayjs(params.get("returnDate"));
   const diff = returnDate.diff(pickDate, "day");
@@ -85,7 +85,7 @@ const Card = ({ car }: { car: ICar }) => {
                 <span>
                   <sub>Price for {diff} days</sub>
                 </span>
-                <h1 className="text-3xl font-bold">USD {car?.rentPerDay * diff}</h1>
+                <h1 className="text-3xl font-bold">DH {car?.rentPerDay * diff}</h1>
               </div>
               <div>
                 <Button
