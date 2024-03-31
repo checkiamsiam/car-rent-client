@@ -6,13 +6,7 @@ const items: MenuProps["items"] = [
     key: "1",
     label: (
       <div className="flex gap-5 ">
-        <Image
-          src="/svgs/en-flag.svg"
-          alt=""
-          width={40}
-          height={40}
-          className="rounded-sm cursor-pointer"
-        />
+        <Image src="/svgs/en-flag.svg" alt="" width={40} height={40} className="rounded-sm cursor-pointer" />
         <p>English</p>
       </div>
     ),
@@ -21,13 +15,7 @@ const items: MenuProps["items"] = [
     key: "2",
     label: (
       <div className="flex gap-5 ">
-        <Image
-          src="/svgs/en-flag.svg"
-          alt=""
-          width={40}
-          height={40}
-          className="rounded-sm cursor-pointer"
-        />
+        <Image src="/svgs/en-flag.svg" alt="" width={40} height={40} className="rounded-sm cursor-pointer" />
         <p>France</p>
       </div>
     ),
@@ -36,24 +24,12 @@ const items: MenuProps["items"] = [
 
 const HeaderDropdown = () => {
   return (
-    <div>
-      <Dropdown
-        menu={{ items }}
-        placement="bottomRight"
-        arrow
-        trigger={["click"]}
-        className="gap-5"
-        rootClassName="z-40"
-      >
-        <Button type="text">
-          <Image
-            src="/svgs/en-flag.svg"
-            alt=""
-            width={40}
-            height={40}
-            className="rounded-sm cursor-pointer"
-          />
-        </Button>
+    <div className="flex gap-5">
+      <Dropdown menu={{ items }} placement="bottomRight" arrow trigger={["click"]} className="gap-5" rootClassName="z-40">
+        <div  className="flex gap-5">
+          <Image src="/svgs/en-flag.svg" alt="" width={40} height={40} className="rounded-sm" />
+          <span className="">EN</span>
+        </div>
       </Dropdown>
     </div>
   );
