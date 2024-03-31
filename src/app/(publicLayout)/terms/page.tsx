@@ -23,7 +23,7 @@ const terms = () => {
           Rental is authorized for the duration decided in the contract unless
           the lessor authorizes the usual expansion. In the absence of return,
           at the agreed deadline, the latter reserve the right to take back the
-          vehicle wherever it is located, at the tenant's expense.
+          vehicle wherever it is located, at the tenant&apos;s expense.
         </p>
         <h2 className="font-semibold text-xl">Delivery/Collection:</h2>
         <p className="mb-3 mt-1">
@@ -96,7 +96,7 @@ const terms = () => {
         </p>
         <h2 className="font-semibold text-xl">Attribution of the parish:</h2>
         <p className="mb-3 mt-1">
-          Expressly, the court in whose jurisdiction the lessor's head office is
+          Expressly, the court in whose jurisdiction the lessor&apos;s head office is
           located will have sole jurisdiction to hear any debate relating to
           this contract. The lessor may in any case waive the benefit of this
           custody clause and bring the bars recently before all competent

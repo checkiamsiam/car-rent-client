@@ -29,8 +29,8 @@ const CheckoutSection = () => {
             <div className=" flex items-start gap-3">
               <FaRegCircleCheck className="mt-1 text-xl" />
               <div>
-                <h2 className="text-xl font-bold">It's almost time to hit the road</h2>
-                <h3>Book now and make sure there's a car waiting for you</h3>
+                <h2 className="text-xl font-bold">It&apos;s almost time to hit the road</h2>
+                <h3>Book now and make sure there&apos;s a car waiting for you</h3>
               </div>
             </div>
           </div>

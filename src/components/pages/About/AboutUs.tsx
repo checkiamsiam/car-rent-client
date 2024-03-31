@@ -20,7 +20,7 @@ const AboutUs = () => {
             SHR Car Rental provides top-notch car rental services tailored to
             meet your needs. With a diverse fleet of vehicles and a commitment
             to customer satisfaction, we offer convenient solutions for all your
-            transportation requirements. Whether it's for business or leisure,
+            transportation requirements. Whether it&apos;s for business or leisure,
             trust SHR Car Rental to deliver a seamless experience every time.
             Rent with us and enjoy the journey hassle-free.
           </p>

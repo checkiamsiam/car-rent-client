@@ -28,8 +28,8 @@ const Choose = () => {
           us?
         </h2>
         <p className="mt-16 leading-8 text-justify w-full md:w-4/5">
-          SHR Car Rental: Your key to seamless travel. SHRCars isn't your
-          average car rental spot at Marrakech airport. We've got some good
+          SHR Car Rental: Your key to seamless travel. SHRCars isn&apos;t your
+          average car rental spot at Marrakech airport. We&apos;ve got some good
           reasons why folks love us:
         </p>
         <div className="ms-1 md:ms-5 leading-8 text-blue-600 font-semibold">

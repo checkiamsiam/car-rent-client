@@ -12,7 +12,7 @@ const AboutUs = () => {
           </h2>
           <p className="mt-3 mb-4">
             Looking for a ride in Marrakech or a car rental marrakech airport?
-            SHRCars got your back! We've got cars for all, be it business or
+            SHRCars got your back! We&apos;ve got cars for all, be it business or
             pleasure. Take your pick from our modern fleet – economy, compact,
             sedan, SUV, minivan, luxury. Affordable rates, top-notch service,
             and easy online booking await you. Pick up at the airport, drop off

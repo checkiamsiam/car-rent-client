@@ -13,7 +13,7 @@ const ProtectionPart = () => {
     <div className="border-[1.5px] p-4 border-blue-600 rounded-md my-5 border-t-8">
       <div>
         <h2 className="text-xl font-bold flex justify-between">
-          Are you sure you don't want Full Protection?
+          Are you sure you don&apos;t want Full Protection?
           <span className="text-2xl">₹5,069.63</span>
         </h2>
         <p className="pb-5 pt-2">

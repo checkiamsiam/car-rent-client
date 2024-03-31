@@ -10,7 +10,7 @@ const PaymentPart = () => {
                 <h2 className="text-2xl font-bold mb-4">How would you like to pay?</h2>
                 <form >
                     <div className="mb-4">
-                        <label htmlFor="firstName" className="block text-sm font-semibold">Cardholder's Name <span className='text-red-500'>*</span></label>
+                        <label htmlFor="firstName" className="block text-sm font-semibold">Cardholder&apos;s Name <span className='text-red-500'>*</span></label>
                         <input type="text" id="firstName" className="mt-1 p-2 w-full border rounded-md" required />
                     </div>
                     <div className="mb-4 relative">
