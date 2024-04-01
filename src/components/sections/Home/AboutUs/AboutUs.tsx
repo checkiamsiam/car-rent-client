@@ -8,7 +8,7 @@ const AboutUs = () => {
       <div className="w-full md:w-1/2 bg-[#ee945c] md:h-[60vh] h-full ">
         <div className="md:mx-20 mx-7 mt-8 md:mt-24 py-4 md:py-0">
           <h2 style={{ color: "#43121d" }} className="text-3xl font-semibold">
-            What Do You Know About Us?
+            Car Rental Marrakech Airport - SHRCars
           </h2>
           <p className="mt-3 mb-4">
             Looking for a ride in Marrakech or a car rental marrakech airport?
