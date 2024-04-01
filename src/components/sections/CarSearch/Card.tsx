@@ -35,8 +35,8 @@ const Card = ({ car }: { car: ICar }) => {
             <h1 className="text-2xl font-semibold mb-3 uppercase">
               {car?.title} <sup className="text-xs md:flex hidden">OR Similar {car?.category} CAR</sup>
             </h1>
-            <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-1">
-              <div className=" flex justify-between items-center">
+            <div className="">
+              <div className="mt-2 flex justify-between items-center">
               <div>
                 <span className="flex gap-1">
                   <PiCassetteTapeThin size={22} /> {car?.seats} SEATS
@@ -54,7 +54,7 @@ const Card = ({ car }: { car: ICar }) => {
                 </span>
               </div>
               </div>
-             <div className="flex justify-between items-center">
+             <div className="flex justify-between items-center mt-2">
              <div>
                 <span className="flex gap-1">
                   {" "}
@@ -70,7 +70,7 @@ const Card = ({ car }: { car: ICar }) => {
                 </span>
               </div>
              </div>
-             <div className="flex justify-between items-center">
+             <div className="flex justify-between items-center mt-2">
              <div>
                 <span className="flex gap-1">
                   {" "}
@@ -88,7 +88,7 @@ const Card = ({ car }: { car: ICar }) => {
              </div>
             </div>
 
-            <div className="flex items-center justify-end">
+            <div className="flex items-center justify-end mt-4">
               <div>
                 <span>
                   <sub>Price for {diff} days</sub>
