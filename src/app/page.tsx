@@ -11,7 +11,6 @@ export default function Home() {
     <main>
       <PublicLayout>
         <HomeBanner />
-        <Choose />
         <Car />
         <AboutUs />
         <FAQ />

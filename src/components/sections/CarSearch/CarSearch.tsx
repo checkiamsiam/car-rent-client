@@ -18,7 +18,7 @@ export default async function CarSearch({ searchParams }: { searchParams: any })
   const data = await getSearch({ id: location, params: filters });
   console.log(data);
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 py-2">
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 py-2 md:mx-24 mx-2">
       {/* left part of design */}
       <div className="overflow-hidden">
         {(data?.cars[0]?.location as any)?.mapIframe && <Googlemap iframe={(data?.cars[0]?.location as any)?.mapIframe} />}
