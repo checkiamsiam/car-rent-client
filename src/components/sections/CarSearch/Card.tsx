@@ -31,44 +31,44 @@ const Card = ({ car }: { car: ICar }) => {
         <div className="w-full">
           <button className="bg-[#2C6EA7] p-1 rounded-md text-white">Top Pick</button>
           <div className="my-5">
-            <h1 className="text-2xl font-bold mb-3">
+            <h1 className="text-2xl font-semibold mb-3">
               {car?.title} <sup className="text-xs">or similar {car?.category} car</sup>
             </h1>
             <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-1">
               <div>
                 <span className="flex gap-1">
-                  <PiCassetteTapeThin size={25} /> {car?.seats} seats
+                  <PiCassetteTapeThin size={22} /> {car?.seats} seats
                 </span>
               </div>
               <div>
                 <span className="flex gap-1">
-                  <TbManualGearbox size={25} /> {car?.automatic ? "Automatic" : "Manual"}
+                  <TbManualGearbox size={22} /> {car?.automatic ? "Automatic" : "Manual"}
                 </span>
               </div>
               <div>
                 <span className="flex gap-1">
-                  <IoBagOutline size={25} />
+                  <IoBagOutline size={22} />
                   {car?.bags} bag
                 </span>
               </div>
               <div>
                 <span className="flex gap-1">
                   {" "}
-                  <IoLogoXbox size={25} />
+                  <IoLogoXbox size={22} />
                   Unlimited mileage
                 </span>
               </div>
               <div>
                 <span className="flex gap-1">
                   {" "}
-                  <FaDoorClosed size={25} />
+                  <FaDoorClosed size={22} />
                   {car?.dors} doors
                 </span>
               </div>
               <div>
                 <span className="flex gap-1">
                   {" "}
-                  <TbAirConditioning size={25} />
+                  <TbAirConditioning size={22} />
                   {car?.ac ? "Air conditioning" : "No Air conditioning"}
                 </span>
               </div>
@@ -81,7 +81,7 @@ const Card = ({ car }: { car: ICar }) => {
               </div>
             </div>
 
-            <div className="flex flex-wrap items-end justify-between">
+            <div className="flex flex-wrap items-end">
               <div>
                 <span>
                   <sub>Price for {diff} days</sub>
@@ -93,6 +93,7 @@ const Card = ({ car }: { car: ICar }) => {
                   size="large"
                   style={{
                     backgroundColor: "#068423",
+                    color: "white"
                   }}
                   onClick={() => router.push(`/checkout/${car?._id}?${new URLSearchParams(searchQuery)}`)}
                 >
@@ -118,12 +119,12 @@ const Card = ({ car }: { car: ICar }) => {
           <div className="flex gap-3 justify-center items-center">
             <h1 className="text-[#2C6EA7] flex gap-1 justify-center items-center cursor-pointer" onClick={() => setShowInfo(!showInfo)}>
               {" "}
-              <AiOutlineInfoCircle color="#2C6EA7" size={25} />
+              <AiOutlineInfoCircle color="#2C6EA7" size={22} />
               Important info
-              {showInfo ? <IoIosArrowUp color="#2C6EA7" size={25} /> : <IoIosArrowDown color="#2C6EA7" size={25} />}
+              {showInfo ? <IoIosArrowUp color="#2C6EA7" size={22} /> : <IoIosArrowDown color="#2C6EA7" size={22} />}
             </h1>
             <h1 className="text-[#2C6EA7] flex gap-1">
-              <MdOutlineEmail color="#2C6EA7" size={25} />
+              <MdOutlineEmail color="#2C6EA7" size={22} />
               Email quote
             </h1>
           </div>
