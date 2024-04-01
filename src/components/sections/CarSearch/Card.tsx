@@ -70,7 +70,7 @@ const Card = ({ car }: { car: ICar }) => {
                 <span className="flex gap-1">
                   {" "}
                   <TbAirConditioning size={22} />
-                  {car?.ac ? "Air conditioning" : "No Air conditioning"}
+                  {car?.ac ? "Air conditioning" : "Air conditioning"}
                 </span>
               </div>
               <div>
