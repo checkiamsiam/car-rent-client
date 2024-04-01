@@ -5,7 +5,7 @@ import Googlemap from "./Googlemap";
 
 export default async function CarSearch({ searchParams }: { searchParams: any }) {
   const { location } = searchParams;
-  let filters = {};
+  let filters: any = { sort: "rentPerDay" };
   if (searchParams.category) {
     filters = { ...filters, category: searchParams.category };
   }
