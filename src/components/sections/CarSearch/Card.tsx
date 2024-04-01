@@ -32,13 +32,13 @@ const Card = ({ car }: { car: ICar }) => {
         <div className="w-full">
           <button className="bg-[#2C6EA7] p-1 rounded-md text-white">Top Pick</button>
           <div className="my-5">
-            <h1 className="text-2xl font-semibold mb-3">
-              {car?.title} <sup className="text-xs">or similar {car?.category} car</sup>
+            <h1 className="text-2xl font-semibold mb-3 uppercase">
+              {car?.title} <sup className="text-xs">OR Similar {car?.category} CAR</sup>
             </h1>
             <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-1">
               <div>
                 <span className="flex gap-1">
-                  <PiCassetteTapeThin size={22} /> {car?.seats} seats
+                  <PiCassetteTapeThin size={22} /> {car?.seats} SEATS
                 </span>
               </div>
               <div>
@@ -49,21 +49,21 @@ const Card = ({ car }: { car: ICar }) => {
               <div>
                 <span className="flex gap-1">
                   <IoBagOutline size={22} />
-                  {car?.bags} bag
+                  {car?.bags} BAG
                 </span>
               </div>
               <div>
                 <span className="flex gap-1">
                   {" "}
                   <IoLogoXbox size={22} />
-                  Unlimited mileage
+                  UNLIMITED MILEAGE
                 </span>
               </div>
               <div>
                 <span className="flex gap-1">
                   {" "}
                   <FaDoorClosed size={22} />
-                  {car?.dors} doors
+                  {car?.dors} DOORS
                 </span>
               </div>
               <div>

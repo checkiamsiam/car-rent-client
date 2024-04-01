@@ -31,9 +31,9 @@ const CreateCarPage = () => {
       message.loading("Adding...");
       const res = await addCar({ data: formData }).unwrap();
       if (!!res) {
-        message.destroy();
+        // message.destroy();
         message.success("Your request to add car has been sent successful");
-        router.push("/admin/manage-cars");
+        // router.push("/admin/manage-cars");
       }
     } catch (err: any) {
       message.destroy();
