@@ -22,7 +22,7 @@ const Card = ({ card }: any) => {
     <div className="bg-white md:px-5 px-2 border border-gray-200 rounded-md py-6 uppercase text-[#473C6B] hover:shadow-lg">
       <div className="flex justify-between gap-2">
         <div className="w-2/3">
-          <h1 className="lg:text-2xl md:text-2xl text-2xl h-[320px] font-semibold">{title}</h1>
+          <h1 className="lg:text-2xl md:text-2xl text-2xl h-[60px] font-semibold">{title}</h1>
           <h2 className="lg:text-xl md:text-lg text-lg font-semibold pt-3">{subTitle}</h2>
         </div>
         <div>

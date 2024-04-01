@@ -87,7 +87,7 @@ const Card = ({ car }: { car: ICar }) => {
                 <span>
                   <sub>Price for {diff} days</sub>
                 </span>
-                <h1 className="text-3xl font-semibold text-gray-800 mr-3">{car?.rentPerDay * diff} MAD</h1>
+                <h1 className="text-2xl font-semibold text-gray-700 mr-4">{car?.rentPerDay * diff} MAD/Total</h1>
               </div>
               <div>
                 <Button
