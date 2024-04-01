@@ -3,7 +3,9 @@ import CarSearch from "@/components/sections/CarSearch/CarSearch";
 const SearchResultPage = ({ searchParams }: { searchParams: any }) => {
   return (
     <div className="md:mt-28 mt-10 container mx-auto px-5">
-      <HeadingBox queryParams={searchParams} />
+      <div className="md:mx-24 mx-2">
+        <HeadingBox queryParams={searchParams} />
+      </div>
       <CarSearch searchParams={searchParams} />
     </div>
   );

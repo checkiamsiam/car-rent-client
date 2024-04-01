@@ -131,43 +131,79 @@ const Card = ({ car }: { car: ICar }) => {
           </div>
         </div>
         {showInfo && (
-          <div className="mt-5 grid md:grid-cols-2 grid-cols-1">
+          <div className="mt-5 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
             <p className="flex items-center">
               <span className="text-green-500 pr-2 text-xl">
                 <IoCheckmarkOutline />
               </span>
-              Customer rating: 8.4 / 10
+              Fuel policy: Pick-up and return with the same level
             </p>
             <p className="flex items-center">
               {" "}
               <span className="text-green-500 pr-2 text-xl py-1">
                 <IoCheckmarkOutline />
               </span>
-              Most popular fuel policy
+              Protection in case of theft
             </p>
             <p className="flex items-center">
               <span className="text-green-500 pr-2 text-xl py-2">
                 <IoCheckmarkOutline />
               </span>
-              Short queues
+              DEPOSIT: 5,000 MAD
             </p>
             <p className="flex items-center">
               <span className="text-green-500 pr-2 text-xl">
                 <IoCheckmarkOutline />
               </span>
-              Easy to find counter
+              American Express cards are accepted
             </p>
             <p className="flex items-center">
               <span className="text-green-500 pr-2 text-xl py-2">
                 <IoCheckmarkOutline />
               </span>
-              Helpful counter staff
+              Minimum age: 21 years
             </p>
             <p className="flex items-center">
               <span className="text-green-500 pr-2 text-xl">
                 <IoCheckmarkOutline />
               </span>
-              Well-maintained cars
+              Emergency roadside assistance
+            </p>
+            <p className="flex items-center">
+              <span className="text-green-500 pr-2 text-xl">
+                <IoCheckmarkOutline />
+              </span>
+              DEDUCTIBLE: 5,000 MAD
+            </p>
+            <p className="flex items-center">
+              <span className="text-green-500 pr-2 text-xl">
+                <IoCheckmarkOutline />
+              </span>
+              FREE collection delivery to your place of residence Marrakesh
+            </p>
+            <p className="flex items-center">
+              <span className="text-green-500 pr-2 text-xl">
+                <IoCheckmarkOutline />
+              </span>
+              Partial collision coverage
+            </p>
+            <p className="flex items-center">
+              <span className="text-green-500 pr-2 text-xl">
+                <IoCheckmarkOutline />
+              </span>
+              Debit cards are accepted
+            </p>
+            <p className="flex items-center">
+              <span className="text-green-500 pr-2 text-xl">
+                <IoCheckmarkOutline />
+              </span>
+              Credit cards are accepted
+            </p>
+            <p className="flex items-center">
+              <span className="text-green-500 pr-2 text-xl">
+                <IoCheckmarkOutline />
+              </span>
+              Airport delivery and collection included
             </p>
           </div>
         )}
