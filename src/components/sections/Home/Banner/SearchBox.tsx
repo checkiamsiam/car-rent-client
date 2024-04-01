@@ -3,22 +3,26 @@ import FormCheckboxField from "@/components/form/FormCheckbox";
 import { useRouter } from "@/lib/router-events";
 import searchValidation from "@/schema/search.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button, message } from "antd";
+import { message } from "antd";
 import dayjs from "dayjs";
+import { usePathname, useSearchParams } from "next/navigation";
 import SearchAutoComplete from "./AutoComplete";
 import SearchDatePicker from "./DatePicker";
-import SearchTimePicker from "./TimePicker";
+import SearchTimePicker, { ceilToNextHour } from "./TimePicker";
 
 const SearchBox = () => {
+  const path = usePathname();
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const searchParamsObj = Object.fromEntries(searchParams);
   const handleSearch = (data: any) => {
+    console.log(data);
     const pickDate = dayjs(data?.pickDate);
     const returnDate = dayjs(data?.returnDate);
     const diff = returnDate.diff(pickDate, "day");
-    console.log(diff);
     if (diff < 3) return message.info("please select for at least 3 days");
-
-    router.push(`/search-result?${new URLSearchParams(data)}`);
+    const newParams = { ...searchParamsObj, ...data };
+    router.push(`/search-result?${new URLSearchParams(newParams)}`);
   };
 
   const threeDaysFromNow = new Date();
@@ -32,26 +36,18 @@ const SearchBox = () => {
     return current && current < dayjs().startOf("day").add(3, "day");
   };
 
+
+
+
+
   return (
     <div>
-      <Form
-        submitHandler={handleSearch}
-        resolver={zodResolver(searchValidation)}
-      >
+      <Form submitHandler={handleSearch} resolver={zodResolver(searchValidation)}>
         <div className="flex flex-wrap gap-2 p-3 rounded-md bg-[#ffb700]">
           <SearchAutoComplete name="location" label="Pick-up Location" />
-          <SearchDatePicker
-            name="pickDate"
-            label="Pick-up Date"
-            disableDate={disabledDateBeforeToday}
-          />
+          <SearchDatePicker name="pickDate" label="Pick-up Date" disableDate={disabledDateBeforeToday} />
           <SearchTimePicker name="pickTime" label="Time" />
-          <SearchDatePicker
-            name="returnDate"
-            label="Return Date"
-            defaultValue={threeDaysFromNow}
-            disableDate={disabledDateForReturn}
-          />
+          <SearchDatePicker name="returnDate" label="Return Date" defaultValue={threeDaysFromNow} disableDate={disabledDateForReturn} />
           <SearchTimePicker name="returnTime" label="Time" />
           <div>
             <button
@@ -72,7 +68,7 @@ const SearchBox = () => {
               name="dropOff"
               label="Drop car off diffrect location"
               style={{
-                color: "white",
+                color: path === "/" ? "white" : "black",
               }}
             />
           </div>
@@ -81,7 +77,7 @@ const SearchBox = () => {
               name="driverAge"
               label="Driver aged 30 - 65?"
               style={{
-                color: "white",
+                color: path === "/" ? "white" : "black",
               }}
             />
           </div>

@@ -3,6 +3,7 @@ import { useDebounced } from "@/hooks/useDebounced";
 import { useGetLocationsQuery } from "@/redux/features/location/location.api";
 import { getErrorMessageByPropertyName } from "@/utils/Form/schemaValidator";
 import { AutoComplete, Input, SelectProps } from "antd";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { CiSearch } from "react-icons/ci";
@@ -11,6 +12,12 @@ const SearchAutoComplete = ({ name, label }: { name: string; label?: string }) =
   const query: Record<string, any> = {};
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [inputValue, setInputValue] = useState<string>("");
+  const searchParams = useSearchParams();
+
+  const defaultValues = Object.fromEntries(searchParams);
+  const defaultValueP = defaultValues[name];
+
+  console.log(defaultValueP);
 
   const debouncedTerm = useDebounced({
     searchQuery: searchTerm,
@@ -33,6 +40,7 @@ const SearchAutoComplete = ({ name, label }: { name: string; label?: string }) =
   const {
     control,
     setValue,
+    reset,
     formState: { errors },
   } = useFormContext();
 
@@ -55,6 +63,11 @@ const SearchAutoComplete = ({ name, label }: { name: string; label?: string }) =
     }));
     setOptions(locationOptions);
   }, [data, locations]);
+
+  useEffect(() => {
+    setValue(name, defaultValueP);
+    setInputValue(locations?.find((location:any) => location._id === defaultValueP)?.name || "");
+  }, [data, locations, name, defaultValueP, setValue]);
 
   const errorMessage = getErrorMessageByPropertyName(errors, name);
 
