@@ -24,12 +24,12 @@ const CheckoutSection = async ({ carId, queryParams }: { carId: string; queryPar
   const returnDate = dayjs(queryParams?.returnDate);
   const diff = returnDate.diff(pickDate, "day");
   return (
-    <div className="">
-      <div className="mt-8">
+    <div className="mt-5">
+      {/* <div className="mt-8">
         <p className="text-blue-600 ">Back to Protection Options</p>
         <h2 className="text-3xl font-bold py-2">Checkout</h2>
         <h4>Next... Confirmation</h4>
-      </div>
+      </div> */}
       <div className="lg:flex gap-5">
         <div className="lg:w-[70%]">
           <div className="grid grid-cols-3 gap-5">

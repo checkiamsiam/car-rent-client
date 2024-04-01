@@ -4,17 +4,17 @@ import { Button, Skeleton } from "antd";
 import dayjs from "dayjs";
 import { useState } from "react";
 import { FaAngleRight } from "react-icons/fa6";
-import SearchBox from "../Home/Banner/SearchBox";
+import SearchBox from "../sections/Home/Banner/SearchBox";
 
-const HeadingBox = ({ locationId, queryParams }: { locationId: string; queryParams: any }) => {
+const HeadingBox = ({ queryParams }: { queryParams: any }) => {
   const [editOpen, setEditOpen] = useState(false);
   const { data } = useGetSingleLocationQuery({
-    id: locationId,
+    id: queryParams?.location,
   });
 
   const location = data?.location;
   return (
-    <div className="w-11/12  lg:max-w-7xl m-auto mt-5 border-[1.5px] p-2 rounded-md">
+    <div className="mt-5 border-[1.5px] p-2 rounded-md">
       {!editOpen ? (
         <div className=" flex justify-between items-center">
           <div className="flex items-center gap-10 ">

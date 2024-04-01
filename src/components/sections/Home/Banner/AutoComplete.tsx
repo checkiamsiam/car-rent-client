@@ -12,6 +12,7 @@ const SearchAutoComplete = ({ name, label }: { name: string; label?: string }) =
   const query: Record<string, any> = {};
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [inputValue, setInputValue] = useState<string>("");
+  const [valueMain, setValueMain] = useState<string>("");
   const searchParams = useSearchParams();
 
   const defaultValues = Object.fromEntries(searchParams);
@@ -42,6 +43,8 @@ const SearchAutoComplete = ({ name, label }: { name: string; label?: string }) =
     setValue,
     reset,
     formState: { errors },
+    getValues,
+    getFieldState,
   } = useFormContext();
 
   const [options, setOptions] = useState<SelectProps<object>["options"]>([]);
@@ -52,7 +55,7 @@ const SearchAutoComplete = ({ name, label }: { name: string; label?: string }) =
   };
 
   const onSelect = (value: string, option: any) => {
-    setValue(name, option.value); // Set the selected value
+    setValueMain(option.value); // Set the selected value
     setInputValue(option.label); // Update the inputValue to reflect the selected label
   };
 
@@ -64,9 +67,19 @@ const SearchAutoComplete = ({ name, label }: { name: string; label?: string }) =
     setOptions(locationOptions);
   }, [data, locations]);
 
+  console.log(getValues());
+  console.log(getFieldState);
+
   useEffect(() => {
-    setValue(name, defaultValueP);
-    setInputValue(locations?.find((location:any) => location._id === defaultValueP)?.name || "");
+    valueMain && setValue(name, valueMain);
+  }, [valueMain, setValue, name, errors]);
+
+  useEffect(() => {
+    setValueMain(defaultValueP);
+  }, [defaultValueP]);
+
+  useEffect(() => {
+    setInputValue(locations?.find((location: any) => location._id === defaultValueP)?.name || "");
   }, [data, locations, name, defaultValueP, setValue]);
 
   const errorMessage = getErrorMessageByPropertyName(errors, name);

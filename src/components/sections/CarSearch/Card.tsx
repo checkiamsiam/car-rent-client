@@ -17,7 +17,6 @@ const Card = ({ car }: { car: ICar }) => {
   const router = useRouter();
   const params = useSearchParams();
   const searchQuery = Object.fromEntries(params.entries());
-  const { location, ...restToPass } = searchQuery;
   const pickDate = dayjs(params.get("pickDate"));
   const returnDate = dayjs(params.get("returnDate"));
   const diff = returnDate.diff(pickDate, "day");
@@ -25,7 +24,7 @@ const Card = ({ car }: { car: ICar }) => {
     <div className="border rounded-md p-3  ">
       <div className="lg:flex  gap-2 items-center">
         <div>
-          <img className="w-[300px] m-auto" src={car?.imageUrl} alt="image" />
+          <img className="w-[330px] m-auto" src={car?.imageUrl} alt="image" />
         </div>
         <div className="w-full">
           <button className="bg-[#2C6EA7] p-1 rounded-md text-white">Top Pick</button>
@@ -93,7 +92,7 @@ const Card = ({ car }: { car: ICar }) => {
                   style={{
                     backgroundColor: "#068423",
                   }}
-                  onClick={() => router.push(`/checkout/${car?._id}?${new URLSearchParams(restToPass)}`)}
+                  onClick={() => router.push(`/checkout/${car?._id}?${new URLSearchParams(searchQuery)}`)}
                 >
                   View deal
                 </Button>

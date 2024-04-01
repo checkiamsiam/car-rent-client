@@ -14,7 +14,7 @@ const Header: React.FC = () => {
 
   const [isTop, setIsTop] = useState(true);
   const controlNavbar = () => {
-    if (window.scrollY > 100) {
+    if (window.scrollY > 50) {
       setIsTop(false);
     } else {
       setIsTop(true);

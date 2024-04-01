@@ -8,20 +8,22 @@ import dayjs from "dayjs";
 import { usePathname, useSearchParams } from "next/navigation";
 import SearchAutoComplete from "./AutoComplete";
 import SearchDatePicker from "./DatePicker";
-import SearchTimePicker, { ceilToNextHour } from "./TimePicker";
+import SearchTimePicker from "./TimePicker";
 
 const SearchBox = () => {
   const path = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
   const searchParamsObj = Object.fromEntries(searchParams);
+  
   const handleSearch = (data: any) => {
-    console.log(data);
     const pickDate = dayjs(data?.pickDate);
     const returnDate = dayjs(data?.returnDate);
     const diff = returnDate.diff(pickDate, "day");
     if (diff < 3) return message.info("please select for at least 3 days");
     const newParams = { ...searchParamsObj, ...data };
+    console.log(searchParamsObj);
+    console.log(data);
     router.push(`/search-result?${new URLSearchParams(newParams)}`);
   };
 
@@ -35,10 +37,6 @@ const SearchBox = () => {
   const disabledDateForReturn = (current: dayjs.Dayjs | null) => {
     return current && current < dayjs().startOf("day").add(3, "day");
   };
-
-
-
-
 
   return (
     <div>
