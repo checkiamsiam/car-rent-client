@@ -2,8 +2,10 @@ import { AiOutlineMail, AiOutlineYoutube } from "react-icons/ai";
 import { BiPhoneCall } from "react-icons/bi";
 import { FiFacebook, FiInstagram, FiLinkedin, FiTwitter } from "react-icons/fi";
 import { LiaExternalLinkAltSolid } from "react-icons/lia";
+import { IoMdTime } from "react-icons/io";
 import { MdOutlineAddLocationAlt } from "react-icons/md";
 import ContactMessage from "./ContactMessage";
+import { FaFax } from "react-icons/fa";
 
 const Contact = () => {
   return (
@@ -29,25 +31,37 @@ const Contact = () => {
             {/* <img src="/contact.png" alt="" /> */}
             <div className="mb-2 text-gray-500 ms-2 md:ms-14 font-semibold text-lg flex items-center gap-2">
               <AiOutlineMail />
-              <h4 className="">info@carcental.com</h4>
+              <h4 className="">shrcars@gmail.com</h4>
             </div>
-            <div className="mb-2 text-gray-500 ms-2 md:ms-14 font-semibold text-lg flex items-center gap-2">
-              <LiaExternalLinkAltSolid />
-              <h4 className="">www.carrental.com</h4>
-            </div>
+         
             <div className="text-gray-600 ms-2 md:ms-14 font-medium flex gap-2 items-center text-lg">
               <BiPhoneCall />
-              <h4>+8801601-0001</h4>
+              <h4>+212 660-423448</h4>
+            </div>
+             <div className="mb-2 text-gray-500 ms-2 md:ms-14 font-semibold text-lg flex items-center gap-2">
+              <FaFax />
+              <h4 className="">FAX: +212 633-337432</h4>
             </div>
             <div className="mt-7 text-gray-600 ms-2 md:ms-14 font-medium  items-center text-lg">
               <div className="flex gap-2 items-center">
                 <MdOutlineAddLocationAlt />
-                <h4>3, RK Mission Road, (Lily Pond Center),</h4>
+                <h4>Lot Mahtallah Mhamid N 912,</h4>
               </div>
               <h3 className="ms-7">
-                Level # B-16 Motijhil,
-                <br />
-                Dhaka-1000
+                Marrakech, Marrakech 40000 Morocco
+              </h3>
+            </div>
+             <div className="mt-7 text-gray-600 ms-2 md:ms-14 font-medium  items-center text-lg">
+              <div className="flex gap-2 items-center">
+                <IoMdTime />
+                <h4>
+                  Mon – Fri: 09:00AM – 09:00PM</h4>
+              </div>
+              <h3 className="ms-7">
+                Saturday: 09:00AM – 07:00PM
+              </h3>
+               <h3 className="ms-7">
+                  Sunday: Closed
               </h3>
             </div>
             <div className="flex ms-2 md:ms-14 gap-4 mt-7 text-gray-600 text-xl justify-center md:justify-start">
