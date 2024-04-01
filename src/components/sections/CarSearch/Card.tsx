@@ -24,8 +24,8 @@ const Card = ({ car }: { car: ICar }) => {
   const returnDate = dayjs(params.get("returnDate"));
   const diff = returnDate.diff(pickDate, "day");
   return (
-    <div className="border rounded-md p-3  ">
-      <div className="lg:flex  gap-2 items-center">
+    <div className="border-[2px] rounded-md p-3  ">
+      <div className="lg:flex  gap-5 items-center">
         <div>
           <Image width={100} height={100} className="w-[320px] m-auto" src={car?.imageUrl} alt="image" />
         </div>
@@ -33,9 +33,10 @@ const Card = ({ car }: { car: ICar }) => {
           <button className="bg-[#2C6EA7] p-1 rounded-md text-white">Top Pick</button>
           <div className="my-5">
             <h1 className="text-2xl font-semibold mb-3 uppercase">
-              {car?.title} <sup className="text-xs">OR Similar {car?.category} CAR</sup>
+              {car?.title} <sup className="text-xs md:block hidden">OR Similar {car?.category} CAR</sup>
             </h1>
             <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-1">
+              <div className="md: flex-none flex justify-center items-center">
               <div>
                 <span className="flex gap-1">
                   <PiCassetteTapeThin size={22} /> {car?.seats} SEATS
@@ -51,6 +52,7 @@ const Card = ({ car }: { car: ICar }) => {
                   <IoBagOutline size={22} />
                   {car?.bags} BAG
                 </span>
+              </div>
               </div>
               <div>
                 <span className="flex gap-1">

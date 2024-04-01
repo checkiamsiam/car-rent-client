@@ -61,12 +61,12 @@ const Cars = ({ data }: any) => {
   return (
     <div>
       <div>
-        <h1 className="font-bold text-3xl mb-5">{data?.meta?.total} cars available</h1>
+        <h1 className="font-bold text-3xl mb-5 hidden">{data?.meta?.total} cars available</h1>
         {/* <h1 className="flex items-center gap-1 border py-2 px-3 w-fit rounded-full text-[18px] font-semibold">
           <BiSortAlt2 size={25} /> Sort by:Recommentded<TbArrowsMoveVertical size={25}></TbArrowsMoveVertical>
         </h1> */}
         {/* nav icon menu */}
-        <ul className="flex flex-wrap gap-3 mb-5">
+        <ul className="md:flex hidden flex-wrap gap-3 mb-5">
           {navcar.map((d) => (
             <li
               key={d.id}
