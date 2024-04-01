@@ -16,8 +16,8 @@ const HeadingBox = ({ queryParams }: { queryParams: any }) => {
   return (
     <div className="mt-5 border-[1.7px] border-yellow-500 p-2 rounded-md md:mx-24 mx-2">
       {!editOpen ? (
-        <div className="mx-3 w-full flex justify-between items-center">
-          <div className="flex w-3/5 items-center gap-10 ">
+        <div className="md:mx-5 mx-2 flex justify-between items-center">
+          <div className="flex items-center gap-10 ">
             <div>
               <Skeleton loading={!location} active paragraph={{ rows: 0 }} />
               <h2 className="lg:text-lg font-bold py-1">{location?.name}</h2>
