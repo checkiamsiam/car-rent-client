@@ -3,6 +3,7 @@ import { useRouter } from "@/lib/router-events";
 import { ICar } from "@/types/ApiResponse";
 import { Button } from "antd";
 import dayjs from "dayjs";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { AiOutlineInfoCircle } from "react-icons/ai";
@@ -26,7 +27,7 @@ const Card = ({ car }: { car: ICar }) => {
     <div className="border rounded-md p-3  ">
       <div className="lg:flex  gap-2 items-center">
         <div>
-          <img className="w-[330px] m-auto" src={car?.imageUrl} alt="image" />
+          <Image width={100} height={100} className="w-[320px] m-auto" src={car?.imageUrl} alt="image" />
         </div>
         <div className="w-full">
           <button className="bg-[#2C6EA7] p-1 rounded-md text-white">Top Pick</button>
@@ -81,12 +82,12 @@ const Card = ({ car }: { car: ICar }) => {
               </div>
             </div>
 
-            <div className="flex flex-wrap items-end">
+            <div className="flex items-center justify-end">
               <div>
                 <span>
                   <sub>Price for {diff} days</sub>
                 </span>
-                <h1 className="text-3xl font-bold">DH {car?.rentPerDay * diff}</h1>
+                <h1 className="text-3xl font-semibold text-gray-800 mr-3">{car?.rentPerDay * diff} MAD</h1>
               </div>
               <div>
                 <Button
