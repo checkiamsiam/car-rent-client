@@ -35,7 +35,7 @@ const Header: React.FC = () => {
       <div className=" h-full container px-5 mx-auto py-2 lg:py-5 flex items-center justify-between">
         <div className="flex gap-10 items-center justify-center ">
           <Link href="/" className="flex justify-center items-center">
-            <Image src="/imgs/update-logo.png" alt="" width={45} height={45} className="text-white w-[45px] h-[50px]" />
+            <Image src="/imgs/update-logo.png" alt="" width={50} height={50} className="text-white w-[45px] h-[50px]" />
             <h1 className="text-xl font-sans lg:text-2xl ms-2 font-semibold">SHR Cars</h1>
           </Link>
 

@@ -21,8 +21,12 @@ export default async function CarSearch({ searchParams }: { searchParams: any })
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 py-2 md:mx-24 mx-2">
       {/* left part of design */}
       <div className="overflow-hidden">
+        <div className="overflow-hidden hidden">
         {(data?.cars[0]?.location as any)?.mapIframe && <Googlemap iframe={(data?.cars[0]?.location as any)?.mapIframe} />}
+        </div>
+        <div className="md:block hidden">
         <Filter />
+        </div>
       </div>
       {/* right part of design */}
       <div className="col-span-1 lg:col-span-3">

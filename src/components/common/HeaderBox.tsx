@@ -14,7 +14,7 @@ const HeadingBox = ({ queryParams }: { queryParams: any }) => {
 
   const location = data?.location;
   return (
-    <div className="mt-5 border-[1.7px] border-yellow-500 p-2 rounded-md">
+    <div className="my-5 border-[1.7px] border-yellow-500 p-2 rounded-md">
       {!editOpen ? (
         <div className="md:mx-5 mx-2 flex justify-between items-center">
           <div className="flex items-center gap-10 ">

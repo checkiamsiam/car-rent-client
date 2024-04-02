@@ -41,9 +41,12 @@ const Choose = () => {
             <li>24 Hours Support</li>
           </ul>
         </div>
+
+
+
+      
       </div>
     </div>
   );
 };
-
 export default Choose;

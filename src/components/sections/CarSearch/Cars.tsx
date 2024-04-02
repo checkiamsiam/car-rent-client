@@ -66,7 +66,7 @@ const Cars = ({ data }: any) => {
           <BiSortAlt2 size={25} /> Sort by:Recommentded<TbArrowsMoveVertical size={25}></TbArrowsMoveVertical>
         </h1> */}
         {/* nav icon menu */}
-        <ul className="flex flex-wrap gap-3 mb-5">
+        <ul className="md:flex hidden gap-3 mb-5">
           {navcar.map((d) => (
             <li
               key={d.id}

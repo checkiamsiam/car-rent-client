@@ -24,21 +24,22 @@ const Card = ({ car }: { car: ICar }) => {
   const returnDate = dayjs(params.get("returnDate"));
   const diff = returnDate.diff(pickDate, "day");
   return (
-    <div className="border rounded-md p-3  ">
-      <div className="lg:flex  gap-2 items-center">
+    <div className="border-[2px] rounded-md p-3 mt-7">
+      <div className="lg:flex  gap-7 items-center">
         <div>
           <Image width={100} height={100} className="w-[320px] m-auto" src={car?.imageUrl} alt="image" />
         </div>
         <div className="w-full">
           <button className="bg-[#2C6EA7] p-1 rounded-md text-white">Top Pick</button>
           <div className="my-5">
-            <h1 className="text-2xl font-semibold mb-3">
-              {car?.title} <sup className="text-xs">or similar {car?.category} car</sup>
+            <h1 className="text-2xl font-semibold mb-3 uppercase">
+              {car?.title} <sup className="text-xs md:flex hidden">OR Similar {car?.category} CAR</sup>
             </h1>
-            <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-1">
+            <div className="">
+              <div className="mt-2 flex justify-between items-center">
               <div>
                 <span className="flex gap-1">
-                  <PiCassetteTapeThin size={22} /> {car?.seats} seats
+                  <PiCassetteTapeThin size={22} /> {car?.seats} SEATS
                 </span>
               </div>
               <div>
@@ -49,28 +50,32 @@ const Card = ({ car }: { car: ICar }) => {
               <div>
                 <span className="flex gap-1">
                   <IoBagOutline size={22} />
-                  {car?.bags} bag
+                  {car?.bags} BAG
                 </span>
               </div>
-              <div>
+              </div>
+             <div className="flex justify-between items-center mt-2">
+             <div>
                 <span className="flex gap-1">
                   {" "}
                   <IoLogoXbox size={22} />
-                  Unlimited mileage
+                  UNLIMITED MILEAGE
                 </span>
               </div>
               <div>
                 <span className="flex gap-1">
                   {" "}
                   <FaDoorClosed size={22} />
-                  {car?.dors} doors
+                  {car?.dors} DOORS
                 </span>
               </div>
-              <div>
+             </div>
+             <div className="flex justify-between items-center mt-2">
+             <div>
                 <span className="flex gap-1">
                   {" "}
                   <TbAirConditioning size={22} />
-                  {car?.ac ? "Air conditioning" : "No Air conditioning"}
+                  {car?.ac ? "Air conditioning" : "Air conditioning"}
                 </span>
               </div>
               <div>
@@ -80,9 +85,10 @@ const Card = ({ car }: { car: ICar }) => {
                   {car?.fuel}
                 </span>
               </div>
+             </div>
             </div>
 
-            <div className="flex items-center justify-end">
+            <div className="flex items-center justify-end mt-4">
               <div>
                 <span>
                   <sub>Price for {diff} days</sub>
