@@ -8,6 +8,7 @@ import dayjs from "dayjs";
 import { usePathname, useSearchParams } from "next/navigation";
 import SearchAutoComplete from "./AutoComplete";
 import SearchDatePicker from "./DatePicker";
+import DropOffValue from "./DropOffValue";
 import SearchTimePicker from "./TimePicker";
 
 const SearchBox = () => {
@@ -15,7 +16,7 @@ const SearchBox = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const searchParamsObj = Object.fromEntries(searchParams);
-  
+
   const handleSearch = (data: any) => {
     const pickDate = dayjs(data?.pickDate);
     const returnDate = dayjs(data?.returnDate);
@@ -41,8 +42,9 @@ const SearchBox = () => {
   return (
     <div>
       <Form submitHandler={handleSearch} resolver={zodResolver(searchValidation)}>
-        <div className="flex flex-wrap gap-2 p-3 rounded-md bg-[#ffb700]">
+        <div className="flex max-lg:flex-wrap gap-2 p-3 rounded-md bg-[#ffb700]">
           <SearchAutoComplete name="location" label="Pick-up Location" />
+          <DropOffValue />
           <SearchDatePicker name="pickDate" label="Pick-up Date" disableDate={disabledDateBeforeToday} />
           <SearchTimePicker name="pickTime" label="Time" />
           <SearchDatePicker name="returnDate" label="Return Date" defaultValue={threeDaysFromNow} disableDate={disabledDateForReturn} />

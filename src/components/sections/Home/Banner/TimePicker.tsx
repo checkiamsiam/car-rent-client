@@ -2,6 +2,7 @@
 import { TimePicker } from "antd";
 import dayjs from "dayjs";
 import { useSearchParams } from "next/navigation";
+import { memo } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 
 export function ceilToNextHour(date: any) {
@@ -52,4 +53,4 @@ const SearchTimePicker = ({ name, label }: { name: string; label: string }) => {
   );
 };
 
-export default SearchTimePicker;
+export default memo(SearchTimePicker) ;

@@ -1,6 +1,7 @@
 import { DatePicker, DatePickerProps } from "antd";
 import dayjs from "dayjs";
 import { useSearchParams } from "next/navigation";
+import { memo } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 
 const SearchDatePicker = ({ name, label, defaultValue, disableDate }: { name: string; label: string; defaultValue?: any; disableDate: any }) => {
@@ -50,4 +51,4 @@ const SearchDatePicker = ({ name, label, defaultValue, disableDate }: { name: st
   );
 };
 
-export default SearchDatePicker;
+export default memo(SearchDatePicker);
