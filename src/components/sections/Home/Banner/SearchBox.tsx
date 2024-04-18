@@ -9,6 +9,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import SearchAutoComplete from "./AutoComplete";
 import SearchDatePicker from "./DatePicker";
 import DropOffValue from "./DropOffValue";
+import PopoverRangePicker from "./PopoverRangePicker";
 import SearchTimePicker from "./TimePicker";
 
 const SearchBox = () => {
@@ -42,10 +43,10 @@ const SearchBox = () => {
   return (
     <div>
       <Form submitHandler={handleSearch} resolver={zodResolver(searchValidation)}>
-        <div className="flex max-lg:flex-wrap gap-2 p-3 rounded-md bg-[#ffb700]">
+        <div className="flex max-lg:flex-wrap gap-2 p-3 rounded-md bg-[#ffb700] relative">
           <SearchAutoComplete name="location" label="Pick-up Location" />
           <DropOffValue />
-          <SearchDatePicker name="pickDate" label="Pick-up Date" disableDate={disabledDateBeforeToday} />
+          <PopoverRangePicker disabledDateBeforeToday={disabledDateBeforeToday} />
           <SearchTimePicker name="pickTime" label="Time" />
           <SearchDatePicker name="returnDate" label="Return Date" defaultValue={threeDaysFromNow} disableDate={disabledDateForReturn} />
           <SearchTimePicker name="returnTime" label="Time" />

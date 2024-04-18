@@ -12,6 +12,7 @@
     "@ant-design/cssinjs": "^1.17.2",
     "@hookform/resolvers": "^3.3.2",
     "@reduxjs/toolkit": "^1.9.7",
+    "@types/react-date-range": "^1.4.9",
     "antd": "^5.10.2",
     "axios": "^1.6.2",
     "clsx": "^2.0.0",
