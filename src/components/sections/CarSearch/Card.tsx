@@ -27,82 +27,109 @@ const Card = ({ car }: { car: ICar }) => {
     <div className="border-[2px] rounded-md p-3 mt-7">
       <div className="lg:flex  gap-7 items-center">
         <div>
-          <Image width={100} height={100} className="w-[320px] m-auto" src={car?.imageUrl} alt="image" />
+          <Image
+            width={100}
+            height={100}
+            className="w-[320px] m-auto"
+            src={car?.imageUrl}
+            alt="image"
+          />
         </div>
         <div className="w-full">
-          <button className="bg-[#2C6EA7] p-1 rounded-md text-white">Top Pick</button>
+          <button className="bg-[#2C6EA7] p-1 rounded-md text-white">
+            Top Pick
+          </button>
           <div className="my-5">
             <h1 className="text-2xl font-semibold mb-3 uppercase">
-              {car?.title} <sup className="text-xs md:flex hidden">OR Similar {car?.category} CAR</sup>
+              {car?.title}{" "}
+              <sup className="text-xs md:flex hidden">
+                OR Similar {car?.category} CAR
+              </sup>
             </h1>
             <div className="">
               <div className="mt-2 flex justify-between items-center">
-              <div>
-                <span className="flex gap-1">
-                  <PiCassetteTapeThin size={22} /> {car?.seats} SEATS
-                </span>
-              </div>
-              <div>
-                <span className="flex gap-1">
-                  <TbManualGearbox size={22} /> {car?.automatic ? "Automatic" : "Manual"}
-                </span>
-              </div>
-              <div>
-                <span className="flex gap-1">
+                <div>
+                  <span className="flex gap-1 text-sm">
+                    <PiCassetteTapeThin size={22} /> {car?.seats} SEATS
+                  </span>
+                </div>
+                <div>
+                  <span className="flex gap-1 text-sm">
+                    <TbManualGearbox size={22} />{" "}
+                    {car?.automatic ? "Automatic" : "Manual"}
+                  </span>
+                </div>
+                {/* <div>
+                <span className="flex gap-1 text-sm">
                   <IoBagOutline size={22} />
                   {car?.bags} BAG
                 </span>
+              </div> */}
+                <div>
+                  <span className="flex gap-1 text-sm">
+                    {" "}
+                    <BsFillFuelPumpFill size={20} />
+                    {car?.fuel}
+                  </span>
+                </div>
               </div>
+              <div className="flex md:gap-[155px] gap-4 text-sm2 justify-start items-center mt-2">
+                <div>
+                  <span className="flex gap-1 text-sm">
+                    {" "}
+                    <IoLogoXbox size={22} />
+                    UNLIMITED MILEAGE
+                  </span>
+                </div>
+                {/* <div>
+                  <span className="flex gap-1 text-sm">
+                    {" "}
+                    <FaDoorClosed size={22} />
+                    {car?.dors} DOORS
+                  </span>
+                </div> */}
+                <div className=" md:mr-0 mr-5">
+                  <span className="flex gap-1 text-sm">
+                    {" "}
+                    <TbAirConditioning size={22} />
+                    {car?.ac ? "Air conditioning" : "Air conditioning"}
+                  </span>
+                </div>
               </div>
-             <div className="flex justify-between items-center mt-2">
-             <div>
-                <span className="flex gap-1">
-                  {" "}
-                  <IoLogoXbox size={22} />
-                  UNLIMITED MILEAGE
-                </span>
+              <div className="flex justify-between items-center mt-2">
+                {/* <div>
+                  <span className="flex gap-1 text-sm">
+                    {" "}
+                    <BsFillFuelPumpFill size={20} />
+                    {car?.fuel}
+                  </span>
+                </div> */}
               </div>
-              <div>
-                <span className="flex gap-1">
-                  {" "}
-                  <FaDoorClosed size={22} />
-                  {car?.dors} DOORS
-                </span>
-              </div>
-             </div>
-             <div className="flex justify-between items-center mt-2">
-             <div>
-                <span className="flex gap-1">
-                  {" "}
-                  <TbAirConditioning size={22} />
-                  {car?.ac ? "Air conditioning" : "Air conditioning"}
-                </span>
-              </div>
-              <div>
-                <span className="flex gap-1">
-                  {" "}
-                  <BsFillFuelPumpFill size={20} />
-                  {car?.fuel}
-                </span>
-              </div>
-             </div>
             </div>
 
-            <div className="flex items-center justify-end mt-4">
+            <div className="flex items-center justify-end mt-3">
               <div>
                 <span>
                   <sub>Price for {diff} days</sub>
                 </span>
-                <h1 className="text-2xl font-semibold text-gray-700 mr-4">{car?.rentPerDay * diff} MAD/Total</h1>
+                <h1 className="text-2xl font-semibold text-gray-700 mr-4">
+                  {car?.rentPerDay * diff} MAD/Total
+                </h1>
               </div>
               <div>
                 <Button
                   size="large"
                   style={{
                     backgroundColor: "#068423",
-                    color: "white"
+                    color: "white",
                   }}
-                  onClick={() => router.push(`/checkout/${car?._id}?${new URLSearchParams(searchQuery)}`)}
+                  onClick={() =>
+                    router.push(
+                      `/checkout/${car?._id}?${new URLSearchParams(
+                        searchQuery
+                      )}`
+                    )
+                  }
                 >
                   View deal
                 </Button>
@@ -116,21 +143,32 @@ const Card = ({ car }: { car: ICar }) => {
       <div>
         <div className="flex justify-between items-center flex-wrap">
           <div className="flex gap-2">
-            <button className="bg-[green] text-white py-1 px-2 rounded-md">Enropcar</button>
-            <button className="bg-[#2C6EA7] text-white py-1 px-2 rounded-md">8.1</button>
+            <button className="bg-[green] text-white py-1 px-2 rounded-md">
+              Enropcar
+            </button>
+            <button className="bg-[#2C6EA7] text-white py-1 px-2 rounded-md">
+              8.1
+            </button>
             <div>
               <h1 className="font-semibold">Very good</h1>
               <h3 className="text-xs">200+ reviews</h3>
             </div>
           </div>
           <div className="flex gap-3 justify-center items-center">
-            <h1 className="text-[#2C6EA7] flex gap-1 justify-center items-center cursor-pointer" onClick={() => setShowInfo(!showInfo)}>
+            <h1
+              className="text-[#2C6EA7] flex gap-1 text-sm justify-center items-center cursor-pointer"
+              onClick={() => setShowInfo(!showInfo)}
+            >
               {" "}
               <AiOutlineInfoCircle color="#2C6EA7" size={22} />
               Important info
-              {showInfo ? <IoIosArrowUp color="#2C6EA7" size={22} /> : <IoIosArrowDown color="#2C6EA7" size={22} />}
+              {showInfo ? (
+                <IoIosArrowUp color="#2C6EA7" size={22} />
+              ) : (
+                <IoIosArrowDown color="#2C6EA7" size={22} />
+              )}
             </h1>
-            <h1 className="text-[#2C6EA7] flex gap-1">
+            <h1 className="text-[#2C6EA7] flex gap-1 text-sm">
               <MdOutlineEmail color="#2C6EA7" size={22} />
               Email quote
             </h1>

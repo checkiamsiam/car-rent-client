@@ -1,4 +1,7 @@
-import { setOpenRangePickerOpen, setOpenRangePickerResOpen } from "@/redux/features/searchbox/searchboxSlice";
+import {
+  setOpenRangePickerOpen,
+  setOpenRangePickerResOpen,
+} from "@/redux/features/searchbox/searchboxSlice";
 import { useAppDispatch } from "@/redux/hooks";
 import { addDays, differenceInDays } from "date-fns";
 import dayjs from "dayjs";
@@ -35,7 +38,10 @@ const DateRangePicker = () => {
   // Handler for date range change
   const handleDateChange = (item: any) => {
     const selectedRange = item.selection;
-    const dayDifference = differenceInDays(selectedRange.endDate, selectedRange.startDate);
+    const dayDifference = differenceInDays(
+      selectedRange.endDate,
+      selectedRange.startDate
+    );
 
     // Enforce a minimum range of 3 days
     if (dayDifference >= 2) {

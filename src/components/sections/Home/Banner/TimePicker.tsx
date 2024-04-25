@@ -23,7 +23,9 @@ const SearchTimePicker = ({ name, label }: { name: string; label: string }) => {
 
   const now = new Date();
   const nextHour = ceilToNextHour(new Date(now));
-  const defaultValue = defaultValueP ? defaultValueP : dayjs(nextHour).format("HH:mm");
+  const defaultValue = defaultValueP
+    ? defaultValueP
+    : dayjs(nextHour).format("HH:mm");
   setValue(name, defaultValue);
 
   return (
@@ -37,10 +39,12 @@ const SearchTimePicker = ({ name, label }: { name: string; label: string }) => {
             render={({ field }) => (
               <TimePicker
                 size="large"
-                defaultValue={field.value ? dayjs(field.value, "HH:mm") : undefined}
+                defaultValue={
+                  field.value ? dayjs(field.value, "HH:mm") : undefined
+                }
                 format="HH:mm" // 24-hour format with leading zero
                 onChange={(e, value) => {
-                  console.log(value);
+                  // console.log(value);
                   setValue(name, value);
                 }}
                 style={{ width: "100%", border: "none" }}
@@ -53,4 +57,4 @@ const SearchTimePicker = ({ name, label }: { name: string; label: string }) => {
   );
 };
 
-export default memo(SearchTimePicker) ;
+export default memo(SearchTimePicker);

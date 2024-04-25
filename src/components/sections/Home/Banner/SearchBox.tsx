@@ -25,7 +25,7 @@ const SearchBox = () => {
     if (diff < 3) return message.info("please select for at least 3 days");
     const newParams = { ...searchParamsObj, ...data };
     console.log(searchParamsObj);
-    console.log(data);
+    // console.log(data);
     router.push(`/search-result?${new URLSearchParams(newParams)}`);
   };
 
@@ -42,13 +42,23 @@ const SearchBox = () => {
 
   return (
     <div>
-      <Form submitHandler={handleSearch} resolver={zodResolver(searchValidation)}>
+      <Form
+        submitHandler={handleSearch}
+        resolver={zodResolver(searchValidation)}
+      >
         <div className="flex max-lg:flex-wrap gap-2 p-3 rounded-md bg-[#ffb700] relative">
           <SearchAutoComplete name="location" label="Pick-up Location" />
           <DropOffValue />
-          <PopoverRangePicker disabledDateBeforeToday={disabledDateBeforeToday} />
+          <PopoverRangePicker
+            disabledDateBeforeToday={disabledDateBeforeToday}
+          />
           <SearchTimePicker name="pickTime" label="Time" />
-          <SearchDatePicker name="returnDate" label="Return Date" defaultValue={threeDaysFromNow} disableDate={disabledDateForReturn} />
+          <SearchDatePicker
+            name="returnDate"
+            label="Return Date"
+            defaultValue={threeDaysFromNow}
+            disableDate={disabledDateForReturn}
+          />
           <SearchTimePicker name="returnTime" label="Time" />
           <div>
             <button
