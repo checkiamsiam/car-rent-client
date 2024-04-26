@@ -24,7 +24,7 @@ const Card = ({ car }: { car: ICar }) => {
   const returnDate = dayjs(params.get("returnDate"));
   const diff = returnDate.diff(pickDate, "day");
   return (
-    <div className="border-[2px] rounded-md p-3 mt-7">
+    <div className="border-[2px] rounded-md p-1 mt-7">
       <div className="lg:flex  gap-7 items-center">
         <div>
           <Image
