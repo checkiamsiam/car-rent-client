@@ -125,9 +125,7 @@ const Card = ({ car }: { car: ICar }) => {
                   }}
                   onClick={() =>
                     router.push(
-                      `/checkout/${car?._id}?${new URLSearchParams(
-                        searchQuery
-                      )}`
+                      `/details/${car?._id}?${new URLSearchParams(searchQuery)}`
                     )
                   }
                 >

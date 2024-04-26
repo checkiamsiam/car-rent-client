@@ -1,17 +1,19 @@
+import { Link, useRouter } from "@/lib/router-events";
+import { useSearchParams } from "next/navigation";
 import { getSingleCar } from "@/redux/features/car/car.api";
 import { BsFillFuelPumpFill, BsSpeedometer2 } from "react-icons/bs";
 import { FaRegCircleCheck, FaRegUser } from "react-icons/fa6";
 import { GiGearStickPattern } from "react-icons/gi";
 import { PiBagSimpleDuotone } from "react-icons/pi";
 import { RxTimer } from "react-icons/rx";
-import BillingAddress from "./BillingAddress";
-import DriversDetails from "./DriversDetails";
-import PaymentPart from "./PaymentPart";
-import Rightside from "./Rightside";
-import TermsCondition from "./TermsCondition";
 import dayjs from "dayjs";
+import PickupLocation from "./PickupLocation";
+import RightsideBottom from "./RightsideBottom";
+import CarChoice from "./CarDetails/LeftSide/CarChoice";
+import PriceDetails from "./CarDetails/LeftSide/PriceDetails";
+import ExtraDetails from "./CarDetails/LeftSide/ExtraDetails";
 
-const CheckoutSection = async ({
+const CarDetailsSection = async ({
   carId,
   queryParams,
 }: {
@@ -110,18 +112,31 @@ const CheckoutSection = async ({
               </div>
             </div>
           </div>
-          <DriversDetails />
-          {/* <ProtectionPart /> */}
-          <BillingAddress />
-          <PaymentPart />
-          <TermsCondition />
+
+          <hr className="my-14" />
+
+          <CarChoice />
+          <hr className="my-14" />
+          <PriceDetails />
+
+          <hr className="my-14" />
+          <ExtraDetails />
         </div>
         <div className="lg:w-[30%]  h-full sticky lg:top-20 top-10 lg:mt-8">
-          <Rightside price={car?.rentPerDay} dayDiff={diff} />
+          <PickupLocation />
+          <RightsideBottom price={car?.rentPerDay} dayDiff={diff} />
         </div>
+      </div>
+      <div className="text-center mt-5 ">
+        <Link
+          href={`/protection/${car?._id}`}
+          className=" w-full lg:w-36 text-lg font-bold px-5 py-3 rounded-md bg-green-600 hover:bg-green-700 text-white"
+        >
+          Continue to book
+        </Link>
       </div>
     </div>
   );
 };
 
-export default CheckoutSection;
+export default CarDetailsSection;

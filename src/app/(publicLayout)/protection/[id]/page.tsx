@@ -1,7 +1,8 @@
 import HeadingBox from "@/components/common/HeaderBox";
-import CheckoutSection from "@/components/sections/Payment/CheckoutSection";
+import CarDetailsSection from "@/components/sections/Payment/CarDetailsSection";
+import ProtectionSection from "@/components/sections/Payment/ProtectionSection";
 
-const CheckoutPage = ({
+const ProtectionPage = ({
   params: { id },
   searchParams,
 }: {
@@ -12,10 +13,10 @@ const CheckoutPage = ({
     <div>
       <div className="md:mt-28 mt-20 container mx-auto px-5">
         <HeadingBox queryParams={searchParams} />
-        <CheckoutSection carId={id} queryParams={searchParams} />
+        <ProtectionSection carId={id} queryParams={searchParams} />
       </div>
     </div>
   );
 };
 
-export default CheckoutPage;
+export default ProtectionPage;

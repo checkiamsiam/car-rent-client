@@ -1,4 +1,5 @@
 import AboutUs from "@/components/sections/About/AboutUs";
+
 import React from "react";
 
 const AboutPage = () => {
