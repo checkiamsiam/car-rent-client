@@ -73,7 +73,7 @@ const Card = ({ car }: { car: ICar }) => {
                   </span>
                 </div>
               </div>
-              <div className="flex md:gap-[155px] gap-4 text-sm2 justify-start items-center mt-2">
+              <div className="flex md:gap-[155px] gap-3 text-sm justify-start items-center mt-2">
                 <div>
                   <span className="flex gap-1 text-sm">
                     {" "}
@@ -88,7 +88,7 @@ const Card = ({ car }: { car: ICar }) => {
                     {car?.dors} DOORS
                   </span>
                 </div> */}
-                <div className=" md:mr-0 mr-5">
+                <div className="">
                   <span className="flex gap-1 text-sm">
                     {" "}
                     <TbAirConditioning size={22} />
