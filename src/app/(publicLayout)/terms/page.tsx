@@ -27,9 +27,8 @@ const terms = () => {
         </p>
         <h2 className="font-semibold text-xl">Delivery/Collection:</h2>
         <p className="mb-3 mt-1">
-          SHR Morocco leaves you the choice of the place of pick-up or return of
-          the vehicle (Airport, Inns, Stations, etc.) subject to prior
-          agreement.
+          Cars leaves you the choice of the place of pick-up or return of the
+          vehicle (Airport, Inns, Stations, etc.) subject to prior agreement.
         </p>
         <h2 className="font-semibold text-xl">Fuel:</h2>
         <p className="mb-3 mt-1">
@@ -55,22 +54,22 @@ const terms = () => {
         </p>
         <h2 className="font-semibold text-xl">Online payment:</h2>
         <p className="mb-3 mt-1">
-          Your multi-channel payments are secured by the Interbred Electronic
-          Remittance Center (IMC), which offers a secure remittance service.
-          Upon approval of the arrangement form, the buyer guarantees to SHR
-          that he has the essential authorizations to use the installment
-          strategy chosen by him. In the event of payment by bank card, the
-          provisions relating to the false use of means of payment provided for
-          in the complaints concluded between the Buyer and the card lessor
-          between the SHR Company and its foundation holding the money apply.
+          Your multi-channel payments are secured by the Interbank Electronic
+          Payment Center (CMI), which offers a secure remittance service. Upon
+          approval of the arrangement form, the buyer guarantees to that he has
+          the essential authorizations to use the installment strategy chosen by
+          him. In the event of payment by bank card, the provisions relating to
+          the false use of means of payment provided for in the complaints
+          concluded between the Buyer and the card lessor between the Company
+          and its foundation holding the money apply.
         </p>
         <h2 className="font-semibold text-xl">
           Proof of exchanges paid by credit card:
         </h2>
         <p className="mb-3 mt-1">
           The information recorded by the CMI on the Multichannel payment stage
-          on behalf of SHR constitutes verification of all commercial exchanges
-          between you and the SHR company.
+          on behalf of constitutes verification of all commercial exchanges
+          between you and the company.
         </p>
         <h2 className="font-semibold text-xl">Insurance:</h2>
         <p className="mb-3 mt-1">
@@ -96,11 +95,11 @@ const terms = () => {
         </p>
         <h2 className="font-semibold text-xl">Attribution of the parish:</h2>
         <p className="mb-3 mt-1">
-          Expressly, the court in whose jurisdiction the lessor&apos;s head office is
-          located will have sole jurisdiction to hear any debate relating to
-          this contract. The lessor may in any case waive the benefit of this
-          custody clause and bring the bars recently before all competent
-          courts.
+          Expressly, the court in whose jurisdiction the lessor&apos;s head
+          office is located will have sole jurisdiction to hear any debate
+          relating to this contract. The lessor may in any case waive the
+          benefit of this custody clause and bring the bars recently before all
+          competent courts.
         </p>
         <h2 className="font-semibold text-xl">Refund:</h2>
         <p className="mb-3 mt-1">
