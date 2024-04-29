@@ -31,9 +31,9 @@ const Card = ({ card }: any) => {
   } = card;
   return (
     <div className="bg-white md:px-5 px-2 border border-gray-200 rounded-md py-6 uppercase text-[#473C6B] hover:shadow-lg">
-      <div className="flex justify-between gap-2">
+      <div className="flex justify-between">
         <div className="w-2/3">
-          <h1 className="lg:text-2xl md:text-2xl text-2xl h-[90px] font-semibold">
+          <h1 className="lg:text-2xl md:text-2xl text-2xl h-[55px] font-semibold">
             {title}
           </h1>
           <h2 className="lg:text-xl md:text-lg text-lg font-semibold pt-3">
@@ -54,12 +54,12 @@ const Card = ({ card }: any) => {
               </span>
               <span>{bags} bags</span>
             </li>
-            <li className="flex gap-2 items-center">
+            {/* <li className="flex gap-2 items-center">
               <span>
                 <GiCarDoor />
               </span>
               <span>{door} doors</span>
-            </li>
+            </li> */}
             <li className="flex gap-2 items-center">
               <span>
                 <GiComputerFan />
@@ -82,7 +82,7 @@ const Card = ({ card }: any) => {
         </div>
       </div>
       {/* bg-[#F47322] */}
-      <div className="text-center bg-blue-500 hover:bg-blue-900 w-full my-5 text-white rounded-md py-2 text-xl font-semibold">
+      <div className="text-center bg-emerald-500 hover:bg-blue-900 w-full my-5 text-white rounded-md py-2 text-xl font-semibold">
         <h3>from</h3>
         <h2>{mad} mad/day</h2>
       </div>
@@ -98,7 +98,7 @@ const Card = ({ card }: any) => {
       </div>
       <div>
         <a href="#search-bar-banner">
-          <button className="uppercase mt-5 text-white w-full bg-blue-500 hover:bg-blue-900 py-2 rounded-md">
+          <button className="uppercase mt-5 text-white w-full bg-emerald-500 hover:bg-blue-900 py-2 rounded-md">
             book now
           </button>
         </a>

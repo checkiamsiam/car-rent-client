@@ -24,7 +24,7 @@ const Card = ({ car }: { car: ICar }) => {
   const returnDate = dayjs(params.get("returnDate"));
   const diff = returnDate.diff(pickDate, "day");
   return (
-    <div className="border-[2px] rounded-md p-1 mt-7">
+    <div className="border-[2px] rounded-md p-1 md:p-3 mt-7">
       <div className="lg:flex  gap-7 items-center">
         <div>
           <Image
@@ -48,7 +48,7 @@ const Card = ({ car }: { car: ICar }) => {
             </h1>
             <div className="">
               <div className="mt-2 flex justify-between items-center">
-                <div>
+                <div className="md:block hidden">
                   <span className="flex gap-1 text-sm">
                     <PiCassetteTapeThin size={22} /> {car?.seats} SEATS
                   </span>
@@ -65,16 +65,35 @@ const Card = ({ car }: { car: ICar }) => {
                   {car?.bags} BAG
                 </span>
               </div> */}
-                <div>
+                <div className="md:block hidden">
                   <span className="flex gap-1 text-sm">
                     {" "}
                     <BsFillFuelPumpFill size={20} />
                     {car?.fuel}
                   </span>
                 </div>
+                <div className="md:hidden block">
+                  <span className="flex gap-1 text-sm">
+                    {" "}
+                    <TbAirConditioning size={22} />
+                    {car?.ac ? "Air conditioning" : "Air conditioning"}
+                  </span>
+                </div>
               </div>
-              <div className="flex md:gap-[155px] gap-3 text-sm justify-start items-center mt-2">
-                <div>
+              <div className="flex md:gap-[155px] gap-[147px] text-sm justify-start items-center mt-2">
+                <div className="md:hidden block">
+                  <span className="flex gap-1 text-sm">
+                    <PiCassetteTapeThin size={22} /> {car?.seats} SEATS
+                  </span>
+                </div>
+                <div className="md:hidden block">
+                  <span className="flex gap-1 text-sm">
+                    {" "}
+                    <BsFillFuelPumpFill size={20} />
+                    {car?.fuel}
+                  </span>
+                </div>
+                <div className="md:block hidden">
                   <span className="flex gap-1 text-sm">
                     {" "}
                     <IoLogoXbox size={22} />
@@ -88,7 +107,7 @@ const Card = ({ car }: { car: ICar }) => {
                     {car?.dors} DOORS
                   </span>
                 </div> */}
-                <div className="">
+                <div className="md:block hidden">
                   <span className="flex gap-1 text-sm">
                     {" "}
                     <TbAirConditioning size={22} />
@@ -97,18 +116,26 @@ const Card = ({ car }: { car: ICar }) => {
                 </div>
               </div>
               <div className="flex justify-between items-center mt-2">
-                {/* <div>
+                {/* <div className="md:block hidden">
                   <span className="flex gap-1 text-sm">
                     {" "}
                     <BsFillFuelPumpFill size={20} />
                     {car?.fuel}
                   </span>
                 </div> */}
+
+                <div className="md:hidden block">
+                  <span className="flex gap-1 text-sm">
+                    {" "}
+                    <IoLogoXbox size={22} />
+                    UNLIMITED MILEAGE
+                  </span>
+                </div>
               </div>
             </div>
 
-            <div className="flex items-center justify-end mt-3">
-              <div>
+            <div className="flex items-center justify-end mt-1">
+              <div className="">
                 <span>
                   <sub>Price for {diff} days</sub>
                 </span>
@@ -116,7 +143,7 @@ const Card = ({ car }: { car: ICar }) => {
                   {car?.rentPerDay * diff} MAD/Total
                 </h1>
               </div>
-              <div>
+              {/* <div>
                 <Button
                   size="large"
                   style={{
@@ -129,9 +156,9 @@ const Card = ({ car }: { car: ICar }) => {
                     )
                   }
                 >
-                  View deal
+                  Book
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -141,18 +168,20 @@ const Card = ({ car }: { car: ICar }) => {
       <div>
         <div className="flex justify-between items-center flex-wrap">
           <div className="flex gap-2">
-            <button className="bg-[green] text-white py-1 px-2 rounded-md">
+            {/* <button className="bg-[green] text-white py-1 px-2 rounded-md">
               Enropcar
-            </button>
-            <button className="bg-[#2C6EA7] text-white py-1 px-2 rounded-md">
-              8.1
-            </button>
-            <div>
-              <h1 className="font-semibold">Very good</h1>
-              <h3 className="text-xs">200+ reviews</h3>
+            </button> */}
+            <div className="flex gap-3 justify-center items-center">
+              <button className="bg-[#2C6EA7] text-white py-1 px-2 rounded-md">
+                8.1
+              </button>
+              <div>
+                <h1 className="font-semibold">Very good</h1>
+                <h3 className="text-xs">200+ reviews</h3>
+              </div>
             </div>
           </div>
-          <div className="flex gap-3 justify-center items-center">
+          <div className="md:flex gap-3 hidden justify-center items-center">
             <h1
               className="text-[#2C6EA7] flex gap-1 text-sm justify-center items-center cursor-pointer"
               onClick={() => setShowInfo(!showInfo)}
@@ -171,6 +200,41 @@ const Card = ({ car }: { car: ICar }) => {
               Email quote
             </h1>
           </div>
+          <div>
+            <Button
+              size="large"
+              style={{
+                backgroundColor: "#068423",
+                color: "white",
+              }}
+              onClick={() =>
+                router.push(
+                  `/details/${car?._id}?${new URLSearchParams(searchQuery)}`
+                )
+              }
+            >
+              Book
+            </Button>
+          </div>
+        </div>
+        <div className="flex gap-3 mt-3 md:hidden justify-center items-center">
+          <h1
+            className="text-[#2C6EA7] flex gap-1 text-sm justify-center items-center cursor-pointer"
+            onClick={() => setShowInfo(!showInfo)}
+          >
+            {" "}
+            <AiOutlineInfoCircle color="#2C6EA7" size={22} />
+            Important info
+            {showInfo ? (
+              <IoIosArrowUp color="#2C6EA7" size={22} />
+            ) : (
+              <IoIosArrowDown color="#2C6EA7" size={22} />
+            )}
+          </h1>
+          <h1 className="text-[#2C6EA7] flex gap-1 text-sm">
+            <MdOutlineEmail color="#2C6EA7" size={22} />
+            Email quote
+          </h1>
         </div>
         {showInfo && (
           <div className="mt-5 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
