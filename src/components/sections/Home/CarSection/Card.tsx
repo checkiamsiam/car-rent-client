@@ -82,7 +82,7 @@ const Card = ({ card }: any) => {
         </div>
       </div>
       {/* bg-[#F47322] */}
-      <div className="text-center bg-emerald-500 hover:bg-blue-900 w-full my-5 text-white rounded-md py-2 text-xl font-semibold">
+      <div className="text-center bg-[#068323] hover:bg-blue-900 w-full my-5 text-white rounded-md py-2 text-xl font-semibold">
         <h3>from</h3>
         <h2>{mad} mad/day</h2>
       </div>
@@ -98,7 +98,7 @@ const Card = ({ card }: any) => {
       </div>
       <div>
         <a href="#search-bar-banner">
-          <button className="uppercase mt-5 text-white w-full bg-emerald-500 hover:bg-blue-900 py-2 rounded-md">
+          <button className="uppercase mt-5 text-white w-full bg-[#068323] hover:bg-blue-900 py-2 rounded-md">
             book now
           </button>
         </a>
