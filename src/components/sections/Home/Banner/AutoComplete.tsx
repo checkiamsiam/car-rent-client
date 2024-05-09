@@ -8,7 +8,13 @@ import { memo, useEffect, useState } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { CiSearch } from "react-icons/ci";
 
-const SearchAutoComplete = ({ name, label }: { name: string; label?: string }) => {
+const SearchAutoComplete = ({
+  name,
+  label,
+}: {
+  name: string;
+  label?: string;
+}) => {
   const query: Record<string, any> = {};
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [inputValue, setInputValue] = useState<string>("");
@@ -79,13 +85,20 @@ const SearchAutoComplete = ({ name, label }: { name: string; label?: string }) =
   }, [defaultValueP]);
 
   useEffect(() => {
-    setInputValue(locations?.find((location: any) => location._id === defaultValueP)?.name || "");
+    setInputValue(
+      locations?.find((location: any) => location._id === defaultValueP)
+        ?.name || ""
+    );
   }, [data, locations, name, defaultValueP, setValue]);
 
   const errorMessage = getErrorMessageByPropertyName(errors, name);
 
   return (
-    <div className={`bg-white flex items-center gap- rounded-md max-w-64 px-2 ${errorMessage && "border-2 border-red-700"}`}>
+    <div
+      className={`bg-white flex items-center gap- rounded-md max-w-64 px-2 ${
+        errorMessage && "border-2 border-red-700"
+      }`}
+    >
       <CiSearch className="text-xl font-bold" />
       <div className="block gap-3 justify-center items-center">
         <label className="text-[12px] ms-4 md:ms-2">{label}</label>

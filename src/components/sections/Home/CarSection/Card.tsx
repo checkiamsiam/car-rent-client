@@ -36,7 +36,7 @@ const Card = ({ card }: any) => {
           <h1 className="lg:text-2xl md:text-2xl text-2xl h-[55px] font-semibold">
             {title}
           </h1>
-          <h2 className="lg:text-xl md:text-lg text-lg font-semibold pt-3">
+          <h2 className="lg:text-lg md:text-lg text-md font-semibold pt-3">
             {subTitle}
           </h2>
         </div>
@@ -48,12 +48,12 @@ const Card = ({ card }: any) => {
               </span>
               <span>{seats} seats</span>
             </li>
-            <li className="flex gap-2 items-center">
+            {/* <li className="flex gap-2 items-center">
               <span>
                 <MdShoppingBag />
               </span>
               <span>{bags} bags</span>
-            </li>
+            </li> */}
             {/* <li className="flex gap-2 items-center">
               <span>
                 <GiCarDoor />
@@ -81,8 +81,8 @@ const Card = ({ card }: any) => {
           </ul>
         </div>
       </div>
-      {/* bg-[#F47322] */}
-      <div className="text-center bg-[#068323] hover:bg-blue-900 w-full my-5 text-white rounded-md py-2 text-xl font-semibold">
+      {/* bg-[#F47322] [#00a2ff] */}
+      <div className="text-center bg-[#00a2ff] hover:bg-blue-900 w-full my-5 text-white rounded-md py-2 text-xl font-semibold">
         <h3>from</h3>
         <h2>{mad} mad/day</h2>
       </div>
@@ -98,7 +98,7 @@ const Card = ({ card }: any) => {
       </div>
       <div>
         <a href="#search-bar-banner">
-          <button className="uppercase mt-5 text-white w-full bg-[#068323] hover:bg-blue-900 py-2 rounded-md">
+          <button className="uppercase mt-5 text-white w-full bg-[#00a2ff] hover:bg-blue-900 py-2 rounded-md">
             book now
           </button>
         </a>

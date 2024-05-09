@@ -24,7 +24,7 @@ const SearchBox = () => {
     const diff = returnDate.diff(pickDate, "day");
     if (diff < 3) return message.info("please select for at least 3 days");
     const newParams = { ...searchParamsObj, ...data };
-    console.log(searchParamsObj);
+    // console.log(searchParamsObj);
     // console.log(data);
     router.push(`/search-result?${new URLSearchParams(newParams)}`);
   };

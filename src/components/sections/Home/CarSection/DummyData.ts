@@ -38,7 +38,7 @@ export const carDetialsData = [
   },
   {
     title: "Volkswagen T Roc",
-    subTitle: "Volkswagen T Roc or Similar",
+    subTitle: "Volkswagen or Similar",
     mad: "220",
     seats: 4,
     bags: 2,

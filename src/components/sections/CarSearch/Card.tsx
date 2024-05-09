@@ -80,7 +80,7 @@ const Card = ({ car }: { car: ICar }) => {
                   </span>
                 </div>
               </div>
-              <div className="flex md:gap-[155px] gap-2 text-sm justify-start items-center mt-2">
+              <div className="flex lg:gap-[155px] md:gap-[68px] gap-2 text-sm justify-start items-center mt-2">
                 <div className="md:hidden block">
                   <span className="flex gap-1 text-sm">
                     <PiCassetteTapeThin size={22} /> {car?.seats} SEATS
@@ -94,7 +94,7 @@ const Card = ({ car }: { car: ICar }) => {
                   </span>
                 </div>
                 <div className="md:block hidden">
-                  <span className="flex gap-1 text-sm">
+                  <span className="flex gap-1 text-sm text-green-700">
                     {" "}
                     <IoLogoXbox size={22} />
                     UNLIMITED MILEAGE
@@ -125,7 +125,7 @@ const Card = ({ car }: { car: ICar }) => {
                 </div> */}
 
                 <div className="md:hidden block">
-                  <span className="flex gap-1 text-sm">
+                  <span className="flex gap-1 text-sm text-green-700">
                     {" "}
                     <IoLogoXbox size={22} />
                     UNLIMITED MILEAGE
