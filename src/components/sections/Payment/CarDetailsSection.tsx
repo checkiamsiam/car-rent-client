@@ -1,17 +1,18 @@
-import { Link, useRouter } from "@/lib/router-events";
-import { useSearchParams } from "next/navigation";
+"use client"
+import { useRouter } from "@/lib/router-events";
 import { getSingleCar } from "@/redux/features/car/car.api";
+import dayjs from "dayjs";
+import { useSearchParams } from "next/navigation";
 import { BsFillFuelPumpFill, BsSpeedometer2 } from "react-icons/bs";
 import { FaRegCircleCheck, FaRegUser } from "react-icons/fa6";
 import { GiGearStickPattern } from "react-icons/gi";
 import { PiBagSimpleDuotone } from "react-icons/pi";
 import { RxTimer } from "react-icons/rx";
-import dayjs from "dayjs";
+import CarChoice from "./CarDetails/LeftSide/CarChoice";
+import ExtraDetails from "./CarDetails/LeftSide/ExtraDetails";
+import PriceDetails from "./CarDetails/LeftSide/PriceDetails";
 import PickupLocation from "./PickupLocation";
 import RightsideBottom from "./RightsideBottom";
-import CarChoice from "./CarDetails/LeftSide/CarChoice";
-import PriceDetails from "./CarDetails/LeftSide/PriceDetails";
-import ExtraDetails from "./CarDetails/LeftSide/ExtraDetails";
 
 const CarDetailsSection = async ({
   carId,
@@ -20,6 +21,9 @@ const CarDetailsSection = async ({
   carId: string;
   queryParams: any;
 }) => {
+  const router = useRouter();
+  const params = useSearchParams();
+  const searchQuery = Object.fromEntries(params.entries());
   const carData = await getSingleCar({
     id: carId,
     params: {
@@ -127,13 +131,20 @@ const CarDetailsSection = async ({
           <RightsideBottom price={car?.rentPerDay} dayDiff={diff} />
         </div>
       </div>
-      <div className="text-center mt-5 ">
-        <Link
-          href={`/protection/${car?._id}`}
-          className=" w-full lg:w-36 text-lg font-bold px-5 py-3 rounded-md bg-green-600 hover:bg-green-700 text-white"
+      <div className="flex justify-center items-center mt-5 ">
+        <div>
+
+        <button
+        onClick={() =>
+          router.push(
+            `/protection/${car?._id}?${new URLSearchParams(searchQuery)}`
+          )
+        }
+          className=" w-full  text-lg font-bold px-5 py-3 rounded-md bg-green-600 hover:bg-green-700 text-white"
         >
           Continue to book
-        </Link>
+        </button>
+        </div>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+"use client"
 import { Link, useRouter } from "@/lib/router-events";
 import { useSearchParams } from "next/navigation";
 import { getSingleCar } from "@/redux/features/car/car.api";
@@ -21,6 +22,9 @@ const ProtectionSection = async ({
   carId: string;
   queryParams: any;
 }) => {
+  const router = useRouter();
+  const params = useSearchParams();
+  const searchQuery = Object.fromEntries(params.entries());
   const carData = await getSingleCar({
     id: carId,
     params: {
@@ -133,7 +137,7 @@ const ProtectionSection = async ({
       </div> */}
       <div className="md:flex gap-4 flex-none justify-center items-center w-full mt-4">
         <Link
-          href={`/checkout/${car?._id}`}
+          href={`/checkout/${car?._id}?${new URLSearchParams(searchQuery)}`}
           className="border-[1px] border-black/30 flex flex-col justify-center items-center px-8 py-2 rounded-lg bg-white hover:bg-[#f1f7fc] transition-all duration-300"
         >
           <span className="font-Poppins font-semibold text-[#1273c4] text-[17px]">
@@ -145,7 +149,7 @@ const ProtectionSection = async ({
         </Link>
 
         <Link
-          href={`/checkout/${car?._id}`}
+          href={`/checkout/${car?._id}?${new URLSearchParams(searchQuery)}`}
           className="border-none flex flex-col justify-center items-center px-8 py-2 rounded-lg bg-[#068323] hover:bg-[#0d6521] transition-all duration-300"
         >
           <span className="font-Poppins font-semibold text-white text-[17px]">
